@@ -1,7 +1,7 @@
 public class Lampa extends DispozitivIluminat{
-    private String tip;          
-    private int putere;          // puterea in W
-    private String culoare;      // 
+    public String tip;          
+    public int putere;          // puterea in W
+    public String culoare;      // 
     private String tipBec;       // (LED, incandescent)
     private String marca;        // 
 
