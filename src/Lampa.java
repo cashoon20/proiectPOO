@@ -1,7 +1,8 @@
-public class Lampa extends DispozitivIluminat{
-    public String tip;          
-    public int putere;          // puterea in W
-    public String culoare;      // 
+public class Lampa extends DispozitivIluminat {
+
+    private String tip;
+    private int putere;          // puterea in W
+    private String culoare;      // 
     private String tipBec;       // (LED, incandescent)
     private String marca;        // 
 
@@ -32,18 +33,16 @@ public class Lampa extends DispozitivIluminat{
         this.marca = lampa.marca;
     }
 
-    
     // Implementare metoda abstracta (pornire)
     public void porneste() {
         System.out.println("Lampa a fost pornita");
     }
 
-   // Implementare metoda abstracta (oprire)
+    // Implementare metoda abstracta (oprire)
     public void opreste() {
         System.out.println("Lampa a fost oprita");
     }
 
-    
     // Metoda toString
     public String toString() {
     return " [!] Lampa are tipul '" + tip + "', puterea de " + putere + "W, culoarea '" + culoare + 
