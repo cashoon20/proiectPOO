@@ -1,7 +1,9 @@
-public class Lampa extends DispozitivIluminat{
-    public String tip;          
-    public int putere;          // puterea in W
-    public String culoare;      // 
+
+public class Lampa extends DispozitivIluminat {
+
+    private String tip;
+    private int putere;          // puterea in W
+    private String culoare;      // 
     private String tipBec;       // (LED, incandescent)
     private String marca;        // 
 
@@ -32,38 +34,61 @@ public class Lampa extends DispozitivIluminat{
         this.marca = lampa.marca;
     }
 
-    
     // Implementare metoda abstracta (pornire)
     public void porneste() {
         System.out.println("Lampa a fost pornita");
     }
 
-   // Implementare metoda abstracta (oprire)
+    // Implementare metoda abstracta (oprire)
     public void opreste() {
         System.out.println("Lampa a fost oprita");
     }
 
-    
     // Metoda toString
     public String toString() {
-    return "Lampa are tipul '" + tip + "', puterea de " + putere + "W, culoarea '" + culoare + 
-           "', tipul de bec '" + tipBec + "' si este fabricata de marca '" + marca + "'.";
-}
+        return "Lampa are tipul '" + tip + "', puterea de " + putere + "W', culoarea '"
+                + culoare + "', tipul de bec '" + tipBec + "' si este fabricata de marca '" + marca + "'.";
 
+    }
 
-    // Getter și setter pentru fiecare camp
-    public String getTip() { return tip; }
-    public void setTip(String tip) { this.tip = tip; }
+    // Getter si setter pentru fiecare camp
+    public String getTip() {
+        return tip;
+    }
 
-    public int getPutere() { return putere; }
-    public void setPutere(int putere) { this.putere = putere; }
+    public void setTip(String tip) {
+        this.tip = tip;
+    }
 
-    public String getCuloare() { return culoare; }
-    public void setCuloare(String culoare) { this.culoare = culoare; }
+    public int getPutere() {
+        return putere;
+    }
 
-    public String getTipBec() { return tipBec; }
-    public void setTipBec(String tipBec) { this.tipBec = tipBec; }
+    public void setPutere(int putere) {
+        this.putere = putere;
+    }
 
-    public String getMarca() { return marca; }
-    public void setMarca(String marca) { this.marca = marca; }
+    public String getCuloare() {
+        return culoare;
+    }
+
+    public void setCuloare(String culoare) {
+        this.culoare = culoare;
+    }
+
+    public String getTipBec() {
+        return tipBec;
+    }
+
+    public void setTipBec(String tipBec) {
+        this.tipBec = tipBec;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 }
