@@ -27,6 +27,8 @@ public class TestLampa {
         Lampa lampa3 = new Lampa(lampa1);
         System.out.println(lampa3.toString());  // Ar trebui sa afiseze aceleasi detalii ca lampa 1
 
+        System.out.println("\n=== TESTE LAMPA SMART INTERIOR ===");
+
         LampaSmartInterior lampaSmartInt1 = new LampaSmartInterior();
         LampaSmartInterior lampaSmartInt2 = new LampaSmartInterior(true, true, "pe perete", 10, "Xiaomi");
         LampaSmartInterior lampaSmartInt3 = new LampaSmartInterior(lampaSmartInt2);
@@ -34,6 +36,8 @@ public class TestLampa {
         System.out.println(lampaSmartInt2);
         System.out.println(lampaSmartInt3);
         System.out.println();
+
+        System.out.println("\n=== TESTE PRELUNGITOR ===");
 
         Prelungitor prelungitor1 = new Prelungitor();
         Prelungitor prelungitor2 = new Prelungitor(4, true, 3, "EU", true);
@@ -55,10 +59,17 @@ public class TestLampa {
         System.out.println(lampaSmart1.toString());
         System.out.println(lampaSmart2.toString());
         System.out.println(lampaSmart3.toString());
+        System.out.println();
 
         // Testam metodele de pornire si oprire
         lampaSmart1.porneste();
         lampaSmart2.opreste();
+
+        lampaSmartInt1.porneste();
+        lampaSmartInt2.opreste();
+
+        prelungitor1.porneste();
+        prelungitor2.opreste();
         
     }
 }

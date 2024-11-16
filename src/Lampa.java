@@ -46,7 +46,7 @@ public class Lampa extends DispozitivIluminat {
     // Metoda toString
     public String toString() {
     return " [!] Lampa are tipul '" + tip + "', puterea de " + putere + "W, culoarea '" + culoare + 
-           "', tipul de bec '" + tipBec + "' si este fabricata de marca '" + marca + "'.";
+           "', tipul de bec '" + tipBec + "' si este fabricata de marca '" + marca + "'.\n";
 }
 
 

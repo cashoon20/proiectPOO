@@ -35,12 +35,12 @@ public class LampaSmartInterior extends DispozitivIluminat {
 
     // Metoda porneste
     public void porneste() {
-        System.out.println("Lampa smart de interior a fost pornita.");
+        System.out.println("[+] LAMPA SMART INTERIOR a fost pornita. [+]");
     }
 
     // Metoda opreste
     public void opreste() {
-        System.out.println("Lampa smart de interior a fost oprita.");
+        System.out.println("[-] LAMPA SMART INTERIOR a fost oprita. [-]");
     }
 
     // Metoda toString

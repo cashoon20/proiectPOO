@@ -35,12 +35,12 @@ public class Prelungitor extends DispozitivIluminat {
 
     // Metoda porneste
     public void porneste() {
-        System.out.println("Prelungitorul a fost pornit.");
+        System.out.println("[+] PRELUNGITORUL a fost pornit. [+]");
     }
 
     // Metoda opreste
     public void opreste() {
-        System.out.println("Prelungitorul a fost oprit.");
+        System.out.println("[-] PRELUNGITORUL a fost oprit. [-]");
     }
 
     // Metoda toString
