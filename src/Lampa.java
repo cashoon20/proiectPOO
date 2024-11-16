@@ -51,7 +51,7 @@ public class Lampa extends DispozitivIluminat{
 }
 
 
-    // Getter și setter pentru fiecare câmp
+    // Getter și setter pentru fiecare camp
     public String getTip() { return tip; }
     public void setTip(String tip) { this.tip = tip; }
 
