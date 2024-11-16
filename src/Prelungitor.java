@@ -1,4 +1,3 @@
-
 public class Prelungitor extends DispozitivIluminat {
 
     public int numarPrize;
@@ -52,43 +51,18 @@ public class Prelungitor extends DispozitivIluminat {
     }
 
     // Getter si setter
-    public int getNumarPrize() {
-        return numarPrize;
-    }
+    public int getNumarPrize() {return numarPrize; }
+    public void setNumarPrize(int numarPrize) {this.numarPrize = numarPrize;  }
 
-    public void setNumarPrize(int numarPrize) {
-        this.numarPrize = numarPrize;
-    }
+    public boolean getProtectieSupratensiune() {return protectieSupratensiune; }
+    public void setProtectieSupratensiune(boolean protectieSupratensiune) {this.protectieSupratensiune = protectieSupratensiune;}
 
-    public boolean isProtectieSupratensiune() {
-        return protectieSupratensiune;
-    }
+    public int getLungimeCablu() {return lungimeCablu;}
+    public void setLungimeCablu(int lungimeCablu) {this.lungimeCablu = lungimeCablu; }
 
-    public void setProtectieSupratensiune(boolean protectieSupratensiune) {
-        this.protectieSupratensiune = protectieSupratensiune;
-    }
+    public String getTipStecher() {return tipStecher;}
+    public void setTipStecher(String tipStecher) {this.tipStecher = tipStecher;}
 
-    public int getLungimeCablu() {
-        return lungimeCablu;
-    }
-
-    public void setLungimeCablu(int lungimeCablu) {
-        this.lungimeCablu = lungimeCablu;
-    }
-
-    public String getTipStecher() {
-        return tipStecher;
-    }
-
-    public void setTipStecher(String tipStecher) {
-        this.tipStecher = tipStecher;
-    }
-
-    public boolean isIndicatorPornit() {
-        return indicatorPornit;
-    }
-
-    public void setIndicatorPornit(boolean indicatorPornit) {
-        this.indicatorPornit = indicatorPornit;
-    }
+    public boolean getIndicatorPornit() {return indicatorPornit;}
+    public void setIndicatorPornit(boolean indicatorPornit) {this.indicatorPornit = indicatorPornit;}
 }

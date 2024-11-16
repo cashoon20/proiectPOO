@@ -1,4 +1,3 @@
-
 public class LampaSmartInterior extends DispozitivIluminat {
 
     public boolean controlVocal;
@@ -52,43 +51,18 @@ public class LampaSmartInterior extends DispozitivIluminat {
     }
 
     // Gettes si Setter
-    public boolean getControlVocal() {
-        return controlVocal;
-    }
+    public boolean getControlVocal() {return controlVocal;}
+    public void setControlVocal(boolean controlVocal) {this.controlVocal = controlVocal;}
 
-    public void setControlVocal(boolean controlVocal) {
-        this.controlVocal = controlVocal;
-    }
+    public boolean getWifi() { return wifi;}
+    public void setWifi(boolean wifi) {this.wifi = wifi;}
 
-    public boolean getWifi() {
-        return wifi;
-    }
+    public String getTipMontaj() {return tipMontaj;}
+    public void setTipMontaj(String tipMontaj) {this.tipMontaj = tipMontaj; }
 
-    public void setConectivitateWifi(boolean wifi) {
-        this.wifi = wifi;
-    }
-
-    public String getTipMontaj() {
-        return tipMontaj;
-    }
-
-    public void setTipMontaj(String tipMontaj) {
-        this.tipMontaj = tipMontaj;
-    }
-
-    public int getDurataBaterie() {
-        return durataBaterie;
-    }
-
-    public void setDurataBaterie(int durataBaterie) {
-        this.durataBaterie = durataBaterie;
-    }
-
-    public String getProducator() {
-        return producator;
-    }
-
-    public void setProducator(String producator) {
-        this.producator = producator;
-    }
+    public int getDurataBaterie() { return durataBaterie;}
+    public void setDurataBaterie(int durataBaterie) {this.durataBaterie = durataBaterie;}
+    
+    public String getProducator() { return producator;}
+    public void setProducator(String producator) { this.producator = producator;}
 }

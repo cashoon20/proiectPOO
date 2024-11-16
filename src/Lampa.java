@@ -1,4 +1,3 @@
-
 public class Lampa extends DispozitivIluminat {
 
     private String tip;
@@ -52,43 +51,18 @@ public class Lampa extends DispozitivIluminat {
     }
 
     // Getter si setter pentru fiecare camp
-    public String getTip() {
-        return tip;
-    }
+    public String getTip() {return tip; }
+    public void setTip(String tip) {this.tip = tip;}
 
-    public void setTip(String tip) {
-        this.tip = tip;
-    }
+    public int getPutere() {return putere;}
+    public void setPutere(int putere) {this.putere = putere;}
 
-    public int getPutere() {
-        return putere;
-    }
+    public String getCuloare() {return culoare;}
+    public void setCuloare(String culoare) {this.culoare = culoare;}
 
-    public void setPutere(int putere) {
-        this.putere = putere;
-    }
-
-    public String getCuloare() {
-        return culoare;
-    }
-
-    public void setCuloare(String culoare) {
-        this.culoare = culoare;
-    }
-
-    public String getTipBec() {
-        return tipBec;
-    }
-
-    public void setTipBec(String tipBec) {
-        this.tipBec = tipBec;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
+    public String getTipBec() {return tipBec;}
+    public void setTipBec(String tipBec) {this.tipBec = tipBec;}
+    
+    public String getMarca() {return marca; }
+    public void setMarca(String marca) {this.marca = marca; }
 }
