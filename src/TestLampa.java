@@ -27,6 +27,9 @@ public class TestLampa {
         Lampa lampa3 = new Lampa(lampa1);
         System.out.println(lampa3.toString());  // Ar trebui sa afiseze aceleasi detalii ca lampa 1
 
+        // ==============================================================================================
+        // Testele pentru Lampa Smart Interior
+
         System.out.println("\n=== TESTE LAMPA SMART INTERIOR ===");
 
         LampaSmartInterior lampaSmartInt1 = new LampaSmartInterior();
@@ -37,6 +40,8 @@ public class TestLampa {
         System.out.println(lampaSmartInt3);
         System.out.println();
 
+        // ==============================================================================================
+        // Testele pentru prelungitor
         System.out.println("\n=== TESTE PRELUNGITOR ===");
 
         Prelungitor prelungitor1 = new Prelungitor();
@@ -48,7 +53,7 @@ public class TestLampa {
         System.out.println();
 
         // ==============================================================================================
-        // Testele pentru LampaSmartExterior
+        // Testele pentru Lampa Smart Exterior
         System.out.println("\n=== TESTE LAMPA SMART EXTERIOR ===");
 
         LampaSmartExterior lampaSmart1 = new LampaSmartExterior("Smart LED", 80, "alb rece", "LED", "Philips", true, "perete", true, "Miscare", 24);
@@ -61,7 +66,25 @@ public class TestLampa {
         System.out.println(lampaSmart3.toString());
         System.out.println();
 
+        // ==============================================================================================
+        // Testele pentru Sursa Iluminat
+
+        SursaIluminat sursa1 = new SursaIluminat("bec", 5000, 800);
+        SursaIluminat sursa2 = new SursaIluminat();
+        SursaIluminat sursa3 = new SursaIluminat(sursa1);
+
+        // Afisam obiectele
+
+        System.out.println(sursa1.toString());
+        System.out.println(sursa2.toString());
+        System.out.println(sursa3.toString());
+        System.out.println();
+
         // Testam metodele de pornire si oprire
+
+        lampa1.porneste();
+        lampa2.opreste();
+
         lampaSmart1.porneste();
         lampaSmart2.opreste();
 
@@ -70,6 +93,9 @@ public class TestLampa {
 
         prelungitor1.porneste();
         prelungitor2.opreste();
+
+        sursa1.porneste();
+        sursa2.opreste();
         
     }
 }

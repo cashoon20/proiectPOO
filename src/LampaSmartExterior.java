@@ -137,7 +137,7 @@ public class LampaSmartExterior extends Lampa
     public String toString()
     {
         return super.toString() + "\n- Este rezistent la apa: " + rezistentaApa + "\n- montaj: " + tipMontaj + "\n- conectivitate WiFi: " + conectivitateWiFi + 
-                                  "\n- senzor: " + senzorLumina + "\n- durata bateriei: " + durataBaterie + " ore.";
+                                  "\n- senzor: " + senzorLumina + "\n- durata bateriei: " + durataBaterie + " ore.\n";
 
     }
 

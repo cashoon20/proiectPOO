@@ -35,12 +35,12 @@ public class Lampa extends DispozitivIluminat {
 
     // Implementare metoda abstracta (pornire)
     public void porneste() {
-        System.out.println("Lampa a fost pornita");
+        System.out.println("[+] LAMPA a fost pornita. [+]");
     }
 
     // Implementare metoda abstracta (oprire)
     public void opreste() {
-        System.out.println("Lampa a fost oprita");
+        System.out.println("[=] LAMPA a fost oprita. [-]");
     }
 
     // Metoda toString
