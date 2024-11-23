@@ -29,14 +29,33 @@ public class SursaIluminat extends DispozitivIluminat
         this.fluxLuminos = sursailuminat.fluxLuminos;
     }
 
-    public void porneste()
+    @Override
+    // Utilizam metode abstracte de pornire si oprire suprascrise
+    public void porneste() 
     {
-        System.out.println("[+] SURSA DE ILUMINAT a fost pornita. [+]");
+        if(!isPornit())
+        {
+            setPornit(true);
+            System.out.println("[+] Sursa a fost pornita. [+] \n Detalii: " + this);
+        }
+        else
+        {
+        System.out.println("[!!!] Sursa este deja pornita [!!!]");
+        }
     }
 
-    public void opreste()
+    @Override
+    public void opreste() 
     {
-        System.out.println("[-] SURSA DE ILUMINAT a fost oprita. [-]");
+        if(isPornit())
+        {
+            setPornit(false);
+            System.out.println("[-] Sursa a fost oprita. [-]");
+        }
+        else
+        {
+            System.out.println("[!!!] Sursa este deja oprita [!!!]");
+        }
     }
 
     // Cream settere si gettere pentru noile campuri 

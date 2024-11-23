@@ -3,7 +3,7 @@ public class LampaSmartInterior extends DispozitivIluminat {
     public boolean controlVocal;
     public boolean wifi;
     public String tipMontaj;
-    public int durataBaterie;
+    public byte durataBaterie;
     public String producator;
 
     // Constructor fara argumente
@@ -16,7 +16,7 @@ public class LampaSmartInterior extends DispozitivIluminat {
     }
 
     // Constructor cu toate argumentele
-    public LampaSmartInterior(boolean controlVocal, boolean wifi, String tipMontaj, int durataBaterie, String producator) {
+    public LampaSmartInterior(boolean controlVocal, boolean wifi, String tipMontaj, byte durataBaterie, String producator) {
         this.controlVocal = controlVocal;
         this.wifi = wifi;
         this.tipMontaj = tipMontaj;
@@ -60,8 +60,8 @@ public class LampaSmartInterior extends DispozitivIluminat {
     public String getTipMontaj() {return tipMontaj;}
     public void setTipMontaj(String tipMontaj) {this.tipMontaj = tipMontaj; }
 
-    public int getDurataBaterie() { return durataBaterie;}
-    public void setDurataBaterie(int durataBaterie) {this.durataBaterie = durataBaterie;}
+    public byte getDurataBaterie() { return durataBaterie;}
+    public void setDurataBaterie(byte durataBaterie) {this.durataBaterie = durataBaterie;}
     
     public String getProducator() { return producator;}
     public void setProducator(String producator) { this.producator = producator;}

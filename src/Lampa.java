@@ -33,18 +33,39 @@ public class Lampa extends DispozitivIluminat {
         this.marca = lampa.marca;
     }
 
+    @Override
     // Implementare metoda abstracta (pornire)
-    public void porneste() {
-        System.out.println("[+] LAMPA a fost pornita. [+]");
+    public void porneste() 
+    {
+        if(!isPornit())
+        {
+            setPornit(true);
+            System.out.println("[+] LAMPA a fost pornita. [+] \n Detalii: " + this);
+        }
+        else
+        {
+        System.out.println("[!!!] LAMPA este deja pornita [!!!]");
+        }
     }
 
+    @Override
     // Implementare metoda abstracta (oprire)
-    public void opreste() {
-        System.out.println("[=] LAMPA a fost oprita. [-]");
+    public void opreste() 
+    {
+        if(isPornit())
+        {
+            setPornit(false);
+            System.out.println("[-] LAMPA a fost oprita. [-]");
+        }
+        else
+        {
+            System.out.println("[!!!] LAMPA este deja oprita [!!!]");
+        }
     }
 
     // Metoda toString
-    public String toString() {
+    public String toString() 
+    {
     return " [!] Lampa are tipul '" + tip + "', puterea de " + putere + "W, culoarea '" + culoare + 
            "', tipul de bec '" + tipBec + "' si este fabricata de marca '" + marca + "'.\n";
 }

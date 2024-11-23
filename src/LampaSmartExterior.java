@@ -46,16 +46,33 @@ public class LampaSmartExterior extends Lampa
         this.durataBaterie = lampa.durataBaterie;
     }
     
-    // Utilizam metode abstracte de pornire si oprire suprascrise
     @Override
-    public void porneste()
+    // Utilizam metode abstracte de pornire si oprire suprascrise
+    public void porneste() 
     {
-        System.out.println("[+] LAMPA SMART EXTERIOR a fost pornita. [+]");
+        if(!isPornit())
+        {
+            setPornit(true);
+            System.out.println("[+] LAMPA SMART EXTERIOR a fost pornita. [+] \n Detalii: " + this);
+        }
+        else
+        {
+        System.out.println("[!!!] LAMPA SMART EXTERIOR este deja pornita [!!!]");
+        }
     }
 
-    public void opreste()
+    @Override
+    public void opreste() 
     {
-        System.out.println("[-] LAMPA SMART EXTERIOR a fost oprita. [-]");
+        if(isPornit())
+        {
+            setPornit(false);
+            System.out.println("[-] LAMPA SMART EXTERIOR a fost oprita. [-]");
+        }
+        else
+        {
+            System.out.println("[!!!] LAMPA SMART EXTERIOR este deja oprita [!!!]");
+        }
     }
 
     // Cream settere si gettere pentru noile campuri si functii bool

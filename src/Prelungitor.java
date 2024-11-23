@@ -1,8 +1,8 @@
 public class Prelungitor extends DispozitivIluminat {
 
-    public int numarPrize;
+    public byte numarPrize;
     public boolean protectieSupratensiune;
-    public int lungimeCablu;
+    public byte lungimeCablu;
     public String tipStecher;
     public boolean indicatorPornit;
 
@@ -16,7 +16,7 @@ public class Prelungitor extends DispozitivIluminat {
     }
 
     // Constructor cu toate argumentele
-    public Prelungitor(int numarPrize, boolean protectieSupratensiune, int lungimeCablu, String tipStecher, boolean indicatorPornit) {
+    public Prelungitor(byte numarPrize, boolean protectieSupratensiune, byte lungimeCablu, String tipStecher, boolean indicatorPornit) {
         this.numarPrize = numarPrize;
         this.protectieSupratensiune = protectieSupratensiune;
         this.lungimeCablu = lungimeCablu;
@@ -51,14 +51,14 @@ public class Prelungitor extends DispozitivIluminat {
     }
 
     // Getter si setter
-    public int getNumarPrize() {return numarPrize; }
-    public void setNumarPrize(int numarPrize) {this.numarPrize = numarPrize;  }
+    public byte getNumarPrize() {return numarPrize; }
+    public void setNumarPrize(byte numarPrize) {this.numarPrize = numarPrize;  }
 
     public boolean getProtectieSupratensiune() {return protectieSupratensiune; }
     public void setProtectieSupratensiune(boolean protectieSupratensiune) {this.protectieSupratensiune = protectieSupratensiune;}
 
-    public int getLungimeCablu() {return lungimeCablu;}
-    public void setLungimeCablu(int lungimeCablu) {this.lungimeCablu = lungimeCablu; }
+    public byte getLungimeCablu() {return lungimeCablu;}
+    public void setLungimeCablu(byte lungimeCablu) {this.lungimeCablu = lungimeCablu; }
 
     public String getTipStecher() {return tipStecher;}
     public void setTipStecher(String tipStecher) {this.tipStecher = tipStecher;}
