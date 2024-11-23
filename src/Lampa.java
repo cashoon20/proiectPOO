@@ -1,7 +1,7 @@
 public class Lampa extends DispozitivIluminat {
 
     private String tip;
-    private int putere;          // puterea in W
+    private byte putere;          // puterea in W
     private String culoare;      // 
     private String tipBec;       // (LED, incandescent)
     private String marca;        // 
@@ -16,7 +16,7 @@ public class Lampa extends DispozitivIluminat {
     }
 
     // Constructor cu toate argumentele
-    public Lampa(String tip, int putere, String culoare, String tipBec, String marca) {
+    public Lampa(String tip, byte putere, String culoare, String tipBec, String marca) {
         this.tip = tip;
         this.putere = putere;
         this.culoare = culoare;
@@ -54,8 +54,8 @@ public class Lampa extends DispozitivIluminat {
     public String getTip() { return tip; }
     public void setTip(String tip) { this.tip = tip; }
 
-    public int getPutere() { return putere; }
-    public void setPutere(int putere) { this.putere = putere; }
+    public byte getPutere() { return putere; }
+    public void setPutere(byte putere) { this.putere = putere; }
 
     public String getCuloare() { return culoare; }
     public void setCuloare(String culoare) { this.culoare = culoare; }

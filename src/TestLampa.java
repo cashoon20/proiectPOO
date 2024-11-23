@@ -17,7 +17,7 @@ public class TestLampa {
 //        System.out.println(lampa3.toString());  // Ar trebui sa afiseze aceleasi detalii ca lampa 1
    
         Lampa lampa1 = new Lampa();
-        Lampa lampa2 = new Lampa("LED", 10, "alb", "LED", "Philips");
+        Lampa lampa2 = new Lampa("LED", (byte) 10, "alb", "LED", "Philips");
         System.out.println(lampa1);
         System.out.println(lampa2);
 
@@ -56,7 +56,7 @@ public class TestLampa {
         // Testele pentru Lampa Smart Exterior
         System.out.println("\n=== TESTE LAMPA SMART EXTERIOR ===");
 
-        LampaSmartExterior lampaSmart1 = new LampaSmartExterior("Smart LED", 80, "alb rece", "LED", "Philips", true, "perete", true, "Miscare", 24);
+        LampaSmartExterior lampaSmart1 = new LampaSmartExterior("Smart LED", (byte) 80, "alb rece", "LED", "Philips", true, "perete", true, "Miscare", (byte) 24);
         LampaSmartExterior lampaSmart2 = new LampaSmartExterior();
         LampaSmartExterior lampaSmart3 = new LampaSmartExterior(lampaSmart1);
 

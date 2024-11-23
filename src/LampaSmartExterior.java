@@ -4,7 +4,7 @@ public class LampaSmartExterior extends Lampa
     private String tipMontaj;
     private boolean conectivitateWiFi;
     private String senzorLumina;
-    private int durataBaterie; // in cazul in care este fara fir (specificat in ore)
+    private byte durataBaterie; // in cazul in care este fara fir (specificat in ore)
 
     // Constructor fara argumente
 
@@ -21,8 +21,8 @@ public class LampaSmartExterior extends Lampa
     }
 
     // Constructor cu toate argumentele
-    public LampaSmartExterior(String tip, int putere, String culoare, String tipBec, String marca, boolean rezistentaApa, String tipMontaj, boolean conectivitateWiFi, 
-                              String senzorLumina, int durataBaterie)
+    public LampaSmartExterior(String tip, byte putere, String culoare, String tipBec, String marca, boolean rezistentaApa, String tipMontaj, boolean conectivitateWiFi, 
+                              String senzorLumina, byte durataBaterie)
     {
         // Se apeleaza constructorul din Lampa
         super(tip, putere, culoare, tipBec, marca);
@@ -121,12 +121,12 @@ public class LampaSmartExterior extends Lampa
     // DURATA BATERIEI
     // ---------------------------------
 
-    public int getDurataBateriei()
+    public byte getDurataBateriei()
     {
         return durataBaterie;
     }
 
-    public void setDurataBaterie(int durataBaterie)
+    public void setDurataBaterie(byte durataBaterie)
     {
         this.durataBaterie = durataBaterie;
     }
