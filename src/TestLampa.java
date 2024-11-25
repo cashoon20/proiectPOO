@@ -222,7 +222,10 @@ public class TestLampa {
         // Afisarea Prelungitoarelor Extra
         System.out.println("\nInstante Prelungitor Extra:");
         for (Prelungitor prelungitor : prelungitoareExtra) {
+            prelungitor.porneste();
+            //System.out.println(sursa)
             System.out.println(prelungitor);
+            prelungitor.opreste();
         }
 
         // Afisarea Lampilor Smart Extra
