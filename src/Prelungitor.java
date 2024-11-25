@@ -1,13 +1,14 @@
-public class Prelungitor extends DispozitivIluminat {
+public class Prelungitor extends Lampa {
 
-    public byte numarPrize;
-    public boolean protectieSupratensiune;
-    public byte lungimeCablu;
-    public String tipStecher;
-    public boolean indicatorPornit;
+    private int numarPrize;
+    private boolean protectieSupratensiune;
+    private int lungimeCablu;
+    private String tipStecher;
+    private boolean indicatorPornit;
 
     // Constructor fara argumente
     public Prelungitor() {
+        super(); // Constructorul fara parametri al clasei Lampa
         this.numarPrize = 0;
         this.protectieSupratensiune = false;
         this.lungimeCablu = 0;
@@ -16,7 +17,8 @@ public class Prelungitor extends DispozitivIluminat {
     }
 
     // Constructor cu toate argumentele
-    public Prelungitor(byte numarPrize, boolean protectieSupratensiune, byte lungimeCablu, String tipStecher, boolean indicatorPornit) {
+     public Prelungitor(int numarPrize, boolean protectieSupratensiune, int lungimeCablu, String tip, byte putere, String culoare, String tipBec, String marca, String tipStecher, boolean indicatorPornit) {
+        super(tip, putere, culoare, tipBec, marca); // constructorul cu parametri al clasei Lampa
         this.numarPrize = numarPrize;
         this.protectieSupratensiune = protectieSupratensiune;
         this.lungimeCablu = lungimeCablu;
@@ -26,6 +28,8 @@ public class Prelungitor extends DispozitivIluminat {
 
     // Constructor de copiere
     public Prelungitor(Prelungitor prelungitor) {
+        super(prelungitor.getTip(), prelungitor.getPutere(), prelungitor.getCuloare(), 
+              prelungitor.getTipBec(), prelungitor.getMarca()); // Constructorul de copiere al clasei Lampa
         this.numarPrize = prelungitor.numarPrize;
         this.protectieSupratensiune = prelungitor.protectieSupratensiune;
         this.lungimeCablu = prelungitor.lungimeCablu;
@@ -44,25 +48,27 @@ public class Prelungitor extends DispozitivIluminat {
     }
 
     // Metoda toString
+    @Override
     public String toString() {
+        String indicator = indicatorPornit ? "activat" : "nu are indicatorPornit";
         return "Prelungitorul are un numar de prize '" + numarPrize + "', protectie la supratensiune '" + protectieSupratensiune
                 + "', o lungime a cablului de '" + lungimeCablu + "', tipul de stecher '" + tipStecher
-                + "' si un indicator de pornire '" + indicatorPornit + "'.";
+                + "' si un indicator de pornire: " + indicator + ".";
     }
 
-    // Getter si setter
-    public byte getNumarPrize() {return numarPrize; }
-    public void setNumarPrize(byte numarPrize) {this.numarPrize = numarPrize;  }
+    // Getter și Setter
+    public int getNumarPrize() { return numarPrize; }
+    public void setNumarPrize(int numarPrize) { this.numarPrize = numarPrize; }
 
-    public boolean getProtectieSupratensiune() {return protectieSupratensiune; }
-    public void setProtectieSupratensiune(boolean protectieSupratensiune) {this.protectieSupratensiune = protectieSupratensiune;}
+    public boolean isProtectieSupratensiune() { return protectieSupratensiune; }
+    public void setProtectieSupratensiune(boolean protectieSupratensiune) { this.protectieSupratensiune = protectieSupratensiune; }
 
-    public byte getLungimeCablu() {return lungimeCablu;}
-    public void setLungimeCablu(byte lungimeCablu) {this.lungimeCablu = lungimeCablu; }
+    public int getLungimeCablu() { return lungimeCablu; }
+    public void setLungimeCablu(int lungimeCablu) { this.lungimeCablu = lungimeCablu; }
 
-    public String getTipStecher() {return tipStecher;}
-    public void setTipStecher(String tipStecher) {this.tipStecher = tipStecher;}
+    public String getTipStecher() { return tipStecher; }
+    public void setTipStecher(String tipStecher) { this.tipStecher = tipStecher; }
 
-    public boolean getIndicatorPornit() {return indicatorPornit;}
-    public void setIndicatorPornit(boolean indicatorPornit) {this.indicatorPornit = indicatorPornit;}
+    public boolean isIndicatorPornit() { return indicatorPornit; }
+    public void setIndicatorPornit(boolean indicatorPornit) { this.indicatorPornit = indicatorPornit; }
 }

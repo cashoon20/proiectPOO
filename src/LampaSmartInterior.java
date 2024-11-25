@@ -1,13 +1,14 @@
-public class LampaSmartInterior extends DispozitivIluminat {
+public class LampaSmartInterior extends Lampa {
 
-    public boolean controlVocal;
-    public boolean wifi;
-    public String tipMontaj;
-    public byte durataBaterie;
-    public String producator;
+    private boolean controlVocal;
+    private boolean wifi;
+    private String tipMontaj;
+    private byte durataBaterie;
+    private String producator;
 
     // Constructor fara argumente
     public LampaSmartInterior() {
+        super(); // constructorul fara argumente din clasa Lampa
         this.controlVocal = false;
         this.wifi = false;
         this.tipMontaj = "necunoscut";
@@ -16,7 +17,11 @@ public class LampaSmartInterior extends DispozitivIluminat {
     }
 
     // Constructor cu toate argumentele
-    public LampaSmartInterior(boolean controlVocal, boolean wifi, String tipMontaj, byte durataBaterie, String producator) {
+    public LampaSmartInterior(String tip, byte putere, String culoare, String tipBec, String marca, 
+                              boolean controlVocal, boolean wifi, String tipMontaj, 
+                              byte durataBaterie, String producator) {
+       
+        super(tip, putere, culoare, tipBec, marca); // constructorul din clasa Lampa
         this.controlVocal = controlVocal;
         this.wifi = wifi;
         this.tipMontaj = tipMontaj;
@@ -26,6 +31,7 @@ public class LampaSmartInterior extends DispozitivIluminat {
 
     // Constructor de copiere
     public LampaSmartInterior(LampaSmartInterior lampaSmart) {
+        super(lampaSmart.getTip(), lampaSmart.getPutere(), lampaSmart.getCuloare(), lampaSmart.getTipBec(), lampaSmart.getMarca()); // constructorul de copiere din clasa Lampa
         this.controlVocal = lampaSmart.controlVocal;
         this.wifi = lampaSmart.wifi;
         this.tipMontaj = lampaSmart.tipMontaj;
