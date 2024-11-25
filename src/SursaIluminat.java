@@ -36,7 +36,7 @@ public class SursaIluminat extends DispozitivIluminat
         if(!isPornit())
         {
             setPornit(true);
-            System.out.println("[+] Sursa a fost pornita. [+] \n Detalii: " + this);
+            System.out.println("[+] Sursa a fost pornita. [+] \n Detalii:\n " + this);
         }
         else
         {
@@ -107,6 +107,6 @@ public class SursaIluminat extends DispozitivIluminat
 
     public String toString()
     {
-        return "[!] Sursa de iluminat este de tip: " + tipSursa + ", are durata de viata de: " + durataViata + " ore" + ", fluxul luminos de: " + fluxLuminos + " LUMENI.";
+        return "[!] Sursa de iluminat este de tip: " + tipSursa + ", are durata de viata de: " + durataViata + " ore" + ", fluxul luminos de: " + fluxLuminos + " LUMENI.\n";
     }
 }

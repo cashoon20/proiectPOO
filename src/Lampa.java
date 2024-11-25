@@ -40,7 +40,7 @@ public class Lampa extends DispozitivIluminat {
         if(!isPornit())
         {
             setPornit(true);
-            System.out.println("[+] LAMPA a fost pornita. [+] \n Detalii: " + this);
+            System.out.println("[+] LAMPA a fost pornita. [+] \n Detalii:\n " + this);
         }
         else
         {

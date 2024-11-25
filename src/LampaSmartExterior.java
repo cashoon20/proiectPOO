@@ -53,7 +53,7 @@ public class LampaSmartExterior extends Lampa
         if(!isPornit())
         {
             setPornit(true);
-            System.out.println("[+] LAMPA SMART EXTERIOR a fost pornita. [+] \n Detalii: " + this);
+            System.out.println("[+] LAMPA SMART EXTERIOR a fost pornita. [+] \n Detalii:\n " + this);
         }
         else
         {
