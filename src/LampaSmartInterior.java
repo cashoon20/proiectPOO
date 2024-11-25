@@ -18,16 +18,16 @@ public class LampaSmartInterior extends Lampa {
 
     // Constructor cu toate argumentele
     public LampaSmartInterior(String tip, byte putere, String culoare, String tipBec, String marca, 
-                              boolean controlVocal, boolean wifi, String tipMontaj, 
-                              byte durataBaterie, String producator) {
-       
-        super(tip, putere, culoare, tipBec, marca); // constructorul din clasa Lampa
-        this.controlVocal = controlVocal;
-        this.wifi = wifi;
-        this.tipMontaj = tipMontaj;
-        this.durataBaterie = durataBaterie;
-        this.producator = producator;
-    }
+                          boolean controlVocal, boolean wifi, String tipMontaj, 
+                          byte durataBaterie, String producator) {
+    super(tip, putere, culoare, tipBec, marca);
+    this.controlVocal = controlVocal;
+    this.wifi = wifi;
+    this.tipMontaj = tipMontaj;
+    this.durataBaterie = durataBaterie;
+    this.producator = producator;
+}
+
 
     // Constructor de copiere
     public LampaSmartInterior(LampaSmartInterior lampaSmart) {
