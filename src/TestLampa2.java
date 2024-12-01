@@ -95,5 +95,35 @@ public class TestLampa2 {
         for (LampaSmartInterior lampaSmart : lampiSmartExtra) {
             System.out.println(lampaSmart);
         }
+        
+        
+        
+                System.out.println("\n-------------------------\n");
+        System.out.println("Filtrare instante in funccie de conditii:");
+
+        // Afisarea Lampilor care respecta conditiile
+        System.out.println("Lampilor care respecta conditiile:");
+        for (Lampa lampa : lampi) {
+            if (lampa.getTipBec().equals("LED") && lampa.getPutere() > 12) {
+                System.out.println(lampa);
+            }
+        }
+
+        // Afisarea Prelungitoarelor care respecta conditiile
+        System.out.println("\nPrelungitoareExtra care respecta conditiile:");
+        for (Prelungitor prelungitor : prelungitoareExtra) {
+            if (prelungitor.isProtectieSupratensiune() && prelungitor.getLungimeCablu() > 10) {
+                System.out.println(prelungitor);
+            }
+        }
+
+        // Afisarea LampiSmartExtra care respecta conditiile
+        System.out.println("\nLampiSmartExtra care respecta conditiile:");
+        for (LampaSmartInterior lampaSmart : lampiSmartExtra) {
+            if (lampaSmart.getWifi() && lampaSmart.getDurataBaterie() > 10) {
+                System.out.println(lampaSmart);
+            }
+
+        }
     }
 }
