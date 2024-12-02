@@ -127,8 +127,9 @@ public class TestLampa {
         for(Lampa lampa : lampi)
         {
             lampa.porneste();
-            //System.out.println(lampa);
+
             System.out.println();
+
             lampa.opreste();
         }
 
@@ -233,7 +234,66 @@ public class TestLampa {
         for (LampaSmartInterior lampaSmart : lampiSmartExtra) {
             System.out.println(lampaSmart);
         }
+        // ====================================================
+
+                            // CLASA PARINTE
+        // ====================================================
+        //---------------------
+        System.out.println("\n=== Instantele prin cele doua conditii combinate === \n");
+        System.out.println("\t LAMPA \n");
+        //---------------------
+
+        for(Lampa lampa : lampi)
+        {
+            // Cele doua conditii combinate
+            if(lampa.getPutere() > 20 && lampa.getTipBec().equals("LED"))
+            {
+                System.out.println(lampa);
+            }
+            
+        }
+        System.out.println();
+
+        // ====================================================
+
+                            // ALEX
+        // ====================================================
+
+        //---------------------
+        System.out.println("==========================================\n");
+        System.out.println("\t LAMPA SMART EXTERIOR \n");
+        //---------------------
+
+        for(LampaSmartExterior lampaSmart : lampiSmartExterior)
+        {
+            // Cele doua conditii combinate
+            if(lampaSmart.esteRezistentLaApa() && lampaSmart.areConectivitateWiFi())
+            {
+                System.out.println(lampaSmart);
+            }
+        }
+        System.out.println();
+
+        //---------------------
+        System.out.println("==========================================\n");
+        System.out.println("\t SURSA ILUMINAT \n");
+        //---------------------
+
+        for(SursaIluminat sursa : surseIluminat)
+        {
+            if(sursa.getDurataViata() > 5000 && sursa.getFluxLuminos() > 400)
+            {
+                System.out.println(sursa);
+            }
+        }    
+        System.out.println();
         
+        // ====================================================
+
+                            // COSMIN
+        // ====================================================
+
+        System.out.println("=== Instantele prin cele doua conditii combinate s-au finalizat ===\n");
     }
 }
        
