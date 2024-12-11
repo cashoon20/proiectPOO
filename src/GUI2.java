@@ -16,6 +16,11 @@ public class GUI2 extends javax.swing.JFrame {
     Vector<Lampa> lampi = new Vector<>();
     Vector<Prelungitor> prelungitoareExtra = new Vector<>();
     Vector<LampaSmartInterior> lampiSmartExtra = new Vector<>();
+    
+    Vector<LampaSmartExterior> lampiSmartExterior = new Vector<>();
+    Vector<SursaIluminat> surseIluminat = new Vector<>();
+    
+    
     public GUI2() {
         initComponents();
         initializeData();
@@ -57,9 +62,29 @@ public class GUI2 extends javax.swing.JFrame {
         lampiSmartExtra.add(new LampaSmartInterior("Smart 8", (byte) 32, "Gri", "LED", "Apple", true, true, "Perete", (byte) 22, "Apple"));
         lampiSmartExtra.add(new LampaSmartInterior("Smart 9", (byte) 34, "Portocaliu", "LED", "Samsung", true, false, "Masă", (byte) 24, "Samsung"));
         lampiSmartExtra.add(new LampaSmartInterior("Smart 10", (byte) 36, "Roz", "Halogen", "Microsoft", false, true, "Tavan", (byte) 26, "Microsoft"));
-
-
-    }
+        
+        lampiSmartExterior.add(new LampaSmartExterior("Smart LED Exterior", (byte) 50, "alb cald", "LED", "Philips Hue", true, "perete", true, "Miscare", (byte) 12));
+        lampiSmartExterior.add(new LampaSmartExterior("Lampa gradina solara", (byte) 30, "alb natural", "Solar", "GardenPro", true, "sol", true, "Intensitate variabila", (byte) 8));
+        lampiSmartExterior.add(new LampaSmartExterior("Lampa perete smart", (byte) 60, "alb rece", "LED", "Xiaomi Smart", true, "perete", true, "Miscare", (byte) 10));
+        lampiSmartExterior.add(new LampaSmartExterior("Proiector smart", (byte) 100, "alb rece", "LED", "Bosch Smart", true, "perete", true, "Timp programabil", (byte) 15));
+        lampiSmartExterior.add(new LampaSmartExterior("Lampa piscina", (byte) 40, "albastru", "LED", "AquaLight", true, "submersibil", false, "Programator", (byte) 7));
+        lampiSmartExterior.add(new LampaSmartExterior("Lampa solara alee", (byte) 35, "alb cald", "Solar", "SolarPath", true, "sol", true, "Intensitate variabila", (byte) 5));
+        lampiSmartExterior.add(new LampaSmartExterior("Aplica terasa", (byte) 45, "alb natural", "LED", "TerraceLight", false, "perete", true, "Intensitate variabila", (byte) 10));
+        lampiSmartExterior.add(new LampaSmartExterior("Spot gradina smart", (byte) 25, "verde", "LED", "GardenSmart", true, "sol", false, "Miscare", (byte) 6));
+        lampiSmartExterior.add(new LampaSmartExterior("Lampa iluminat statuie", (byte) 70, "alb cald", "LED", "SculptureLight", false, "sol", false, "Intensitate variabila", (byte) 12));
+        lampiSmartExterior.add(new LampaSmartExterior("Lustra exterior", (byte) 60, "alb rece", "Halogen", "OutdoorLust", true, "tavan", true, "Programator", (byte) 11));
+        
+        surseIluminat.add(new SursaIluminat("Bec", 15000, 800));
+        surseIluminat.add(new SursaIluminat("Bec", 2000, 900));
+        surseIluminat.add(new SursaIluminat("Tub", 8000, 700));
+        surseIluminat.add(new SursaIluminat("Tub", 25000, 1200));
+        surseIluminat.add(new SursaIluminat("Bec", 1000, 600));
+        surseIluminat.add(new SursaIluminat("Spot", 20000, 500));
+        surseIluminat.add(new SursaIluminat("Lustra", 12000, 400));
+        surseIluminat.add(new SursaIluminat("Lampadar", 18000, 750));
+        surseIluminat.add(new SursaIluminat("Sursa", 20000, 850));
+        surseIluminat.add(new SursaIluminat("Lumina", 5000, 300));
+}
     
 
     /**
@@ -104,6 +129,36 @@ public class GUI2 extends javax.swing.JFrame {
         jTextFieldLungimeCablu = new javax.swing.JTextField();
         jTextFieldTipStecher = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        ButtonFiltrare1 = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        TextFieldPutereMin1 = new javax.swing.JTextField();
+        TextFieldMarca1 = new javax.swing.JTextField();
+        jTextFieldFluxLuminos = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jTextFieldDurataViata = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jComboBoxRezistentaApa = new javax.swing.JComboBox<>();
+        jComboBoxConectivitateWifi = new javax.swing.JComboBox<>();
+        jTextFieldSenzorLumina = new javax.swing.JTextField();
+        TextFieldCuloare1 = new javax.swing.JTextField();
+        TextFieldPutereMax1 = new javax.swing.JTextField();
+        jTextFieldtipSursa = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -332,15 +387,238 @@ public class GUI2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Cosmin", jPanel1);
 
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane2.setViewportView(jTextArea2);
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel17.setText("Lampa");
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel18.setText("OPTIUNI FILTRARE");
+
+        ButtonFiltrare1.setText("Filtrare");
+        ButtonFiltrare1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonFiltrare1ActionPerformed(evt);
+            }
+        });
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel24.setText("Lampa Smart Exterior");
+
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel28.setText("Sursa de Iluminat");
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lampa", "Lampa Smart Exterior", "Sursa de Iluminat" }));
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("Culoare");
+
+        jLabel20.setText("Max");
+
+        jLabel21.setText("Min");
+
+        jLabel22.setText("Marca");
+
+        jLabel23.setText("Putere");
+
+        TextFieldPutereMin1.setPreferredSize(new java.awt.Dimension(80, 22));
+        TextFieldPutereMin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldPutereMin1ActionPerformed(evt);
+            }
+        });
+
+        TextFieldMarca1.setPreferredSize(new java.awt.Dimension(105, 22));
+
+        jTextFieldFluxLuminos.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        jLabel25.setText("Tip Sursa");
+
+        jLabel26.setText("durata Viata");
+
+        jLabel27.setText("flux Luminos");
+
+        jTextFieldDurataViata.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        jLabel29.setText("rezistenta apa");
+
+        jLabel30.setText("conectivitateWifi");
+
+        jLabel32.setText("senzor lumina");
+
+        jComboBoxRezistentaApa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "true", "false" }));
+        jComboBoxRezistentaApa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRezistentaApaActionPerformed(evt);
+            }
+        });
+
+        jComboBoxConectivitateWifi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "true", "false" }));
+        jComboBoxConectivitateWifi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxConectivitateWifiActionPerformed(evt);
+            }
+        });
+
+        jTextFieldSenzorLumina.setPreferredSize(new java.awt.Dimension(100, 22));
+        jTextFieldSenzorLumina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldSenzorLuminaActionPerformed(evt);
+            }
+        });
+
+        TextFieldCuloare1.setPreferredSize(new java.awt.Dimension(105, 22));
+
+        TextFieldPutereMax1.setToolTipText("");
+        TextFieldPutereMax1.setPreferredSize(new java.awt.Dimension(80, 22));
+        TextFieldPutereMax1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldPutereMax1ActionPerformed(evt);
+            }
+        });
+
+        jTextFieldtipSursa.setPreferredSize(new java.awt.Dimension(100, 22));
+        jTextFieldtipSursa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldtipSursaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 895, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(49, 49, 49)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel18))
+                    .addComponent(ButtonFiltrare1)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel23))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(TextFieldPutereMin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel21))
+                            .addComponent(TextFieldMarca1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextFieldCuloare1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(TextFieldPutereMax1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel20)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28)
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel31)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel26))
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldDurataViata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldFluxLuminos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldtipSursa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel30)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBoxConectivitateWifi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel29)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBoxRezistentaApa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel32)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldSenzorLumina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 484, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel18)
+                        .addGap(31, 31, 31))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel24))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel29)
+                            .addComponent(jComboBoxRezistentaApa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextFieldCuloare1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel22)
+                            .addComponent(TextFieldMarca1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel30)
+                            .addComponent(jComboBoxConectivitateWifi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TextFieldPutereMin1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel23)
+                                .addComponent(jLabel21)
+                                .addComponent(jLabel32)
+                                .addComponent(jTextFieldSenzorLumina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel20)
+                            .addComponent(TextFieldPutereMax1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ButtonFiltrare1)
+                            .addComponent(jLabel28))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel25)
+                            .addComponent(jTextFieldtipSursa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel26)
+                            .addComponent(jTextFieldDurataViata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel27)
+                            .addComponent(jTextFieldFluxLuminos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel31)))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Alex", jPanel2);
@@ -365,85 +643,218 @@ public class GUI2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
-        String selectedItem = (String) jComboBox1.getSelectedItem();
-        jTextArea1.setText(""); // Goleste text area
+    }//GEN-LAST:event_jComboBox3ActionPerformed
 
-        switch (selectedItem) {
+    private void ButtonFiltrare1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFiltrare1ActionPerformed
+        // TODO add your handling code here:
+                // Preluam valorile de filtrare
+        String culoare = TextFieldCuloare1.getText().trim();
+        String marca = TextFieldMarca1.getText().trim();
+        String putereMinText = TextFieldPutereMin1.getText().trim();
+        String putereMaxText = TextFieldPutereMax1.getText().trim();
+
+        // Conversia in byte a puterii lampii
+        Byte putereMin = putereMinText.isEmpty() ? null : Byte.parseByte(putereMinText);
+        Byte putereMax = putereMaxText.isEmpty() ? null : Byte.parseByte(putereMaxText);
+
+        // Combo Boxul ul care zice ce va fi filtrat
+        String selectedCategory = (String) jComboBox3.getSelectedItem();
+        
+        // String functions
+        String RezistentaApaText = (String) jComboBoxRezistentaApa.getSelectedItem();
+        String conectivitateWifiText = (String) jComboBoxConectivitateWifi.getSelectedItem();
+        String tipSursa = jTextFieldtipSursa.getText().trim();
+        String durataViataText = jTextFieldDurataViata.getText().trim();
+        String senzorLumina = jTextFieldSenzorLumina.getText().trim();
+        String fluxLuminosText = jTextFieldFluxLuminos.getText().trim();
+        
+        // Boolean functions
+        Boolean rezistentaApa = RezistentaApaText == null ? null : Boolean.parseBoolean(RezistentaApaText);
+        Boolean conectivitateWifi = conectivitateWifiText == null ? null : Boolean.parseBoolean(conectivitateWifiText);
+        //Boolean senzorLumina = senzorLuminaText == null ? null : Boolean.parseBoolean(senzorLuminaText);
+        //Boolean tipSursa = tipSursaText == null ? null : Boolean.parseBoolean(tipSursaText);
+        //Boolean durataViata = DurataViataText == null ? null : Boolean.parseBolean(DurataViataText);
+
+        // Empty the text area
+        jTextArea2.setText("");
+
+        boolean foundMatch = false;  // Variabila pentru daca un rezultat e bun
+
+        switch (selectedCategory) {
             case "Lampa":
-                for (Lampa lampa : lampi) {
-                    jTextArea1.append(lampa.toString() + "\n");
-                }
-                break;
-            case "Lampa Smart Interior":
-                for (LampaSmartInterior smartLampa : lampiSmartExtra) {
-                    jTextArea1.append(smartLampa.toString() + "\n");
-                }
-                break;
-            case "Prelungitor":
-                for (Prelungitor prelungitor : prelungitoareExtra) {
-                    jTextArea1.append(prelungitor.toString() + "\n");
-                }
-                break;
-        }
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void ButtonFiltrareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFiltrareActionPerformed
-        // TODO add your handling code here:
-                                                  
-    // Preluam valorile de filtrare
-    String culoare = TextFieldCuloare.getText().trim();
-    String marca = TextFieldMarca.getText().trim();
-    String putereMinText = TextFieldPutereMin.getText().trim();
-    String putereMaxText = TextFieldPutereMax.getText().trim();
-    
-    String controlVocalText = (String) jComboBoxControlVocal.getSelectedItem();
-    String wifiText = (String) jComboBoxWifi.getSelectedItem(); 
-    String producator = jTextFieldProducator.getText().trim();
-    
-    String numarPrizeText = jTextFieldNumarPrize.getText().trim();
-    String lungimeCabluText = jTextFieldLungimeCablu.getText().trim();
-    String tipStecher = jTextFieldTipStecher.getText().trim();
-
-    
-    // Convertim valorile din ComboBox in Boolean
-    Boolean controlVocal = controlVocalText == null ? null : Boolean.parseBoolean(controlVocalText);
-    Boolean wifi = wifiText == null ? null : Boolean.parseBoolean(wifiText);
-    
-    // Nu mai stiu daca sunt importante
-    Byte putereMin = putereMinText.isEmpty() ? null : Byte.parseByte(putereMinText);
-    Byte putereMax = putereMaxText.isEmpty() ? null : Byte.parseByte(putereMaxText);
-    
-    // Combo Boxul ul care zice ce va fi filtrat
-    String selectedCategory = (String) jComboBox1.getSelectedItem();
-    
-    // Empty the text area
-    jTextArea1.setText("");  
-    
-    boolean foundMatch = false;  // Variabila pentru daca un rezultat e bun
-
-    switch (selectedCategory) {
-        case "Lampa":
             for (Lampa lampa : lampi) {
                 boolean matchesCuloare = true;
                 boolean matchesMarca = true;
                 boolean matchesPutere = true;
-                
-                
+
                 if (!culoare.isEmpty() && !lampa.getCuloare().equalsIgnoreCase(culoare)) {
                     matchesCuloare = false;
                 }
-                
-                
+
                 if (!marca.isEmpty() && !lampa.getMarca().equalsIgnoreCase(marca)) {
                     matchesMarca = false;
                 }
-                
+
                 if (putereMin != null && lampa.getPutere() < putereMin) {
                     matchesPutere = false;
                 }
+
+                if (putereMax != null && lampa.getPutere() > putereMax) {
+                    matchesPutere = false;
+                }
+
+                // daca totul e bine, afisare in text area
+                if (matchesCuloare && matchesMarca && matchesPutere) {
+                    jTextArea2.append(lampa.toString() + "\n");
+                    foundMatch = true;
+                }
+            }
+            break;
+        
+            case "Lampa Smart Exterior":
+            for (LampaSmartExterior lampaExterior : lampiSmartExterior) {
+                boolean matchesRezistentaApa = true;
+                boolean matchesConectivitateWiFi = true;
+                boolean matchesSenzorLumina = true;
+
+                if (rezistentaApa != null && lampaExterior.esteRezistentLaApa() != rezistentaApa) {
+                    matchesRezistentaApa = false;
+                }
+
+                if (conectivitateWifi != null && lampaExterior.areConectivitateWiFi() != conectivitateWifi) {
+                    matchesConectivitateWiFi = false;
+                }
+
+                if (!senzorLumina.isEmpty() && !lampaExterior.getSenzoriLumina().equalsIgnoreCase(senzorLumina)) {
+                    matchesSenzorLumina = false;
+                }
+
+                if (matchesRezistentaApa && matchesConectivitateWiFi && matchesSenzorLumina) {
+                    jTextArea2.append(lampaExterior.toString() + "\n");
+                    foundMatch = true;
+                }
+            }
+            break;
+            
+            case "Sursa de Iluminat":
+            for (SursaIluminat sursa : surseIluminat) {
+                boolean matchesTipSursa = true;
+                boolean matchesDurataViata = true;
+                boolean matchesFluxLuminos = true;
+
+                if (!tipSursa.isEmpty() && !sursa.getTipSursa().equalsIgnoreCase(tipSursa)) {
+                    matchesTipSursa = false;
+                }
                 
+                
+                if (!durataViataText.isEmpty()) {
+                   int durataViata = Integer.parseInt(durataViataText);
+                   if(sursa.getDurataViata() != durataViata)
+                   {
+                       matchesDurataViata = false;
+                   }
+                }
+
+                if(!fluxLuminosText.isEmpty())
+                {
+                    int fluxLuminos = Integer.parseInt(fluxLuminosText);
+                    if(sursa.getFluxLuminos()!= fluxLuminos)
+                    {
+                        matchesFluxLuminos = false;
+                    }
+                }
+
+                if (matchesTipSursa && matchesDurataViata && matchesFluxLuminos) {
+                    jTextArea2.append(sursa.toString() + "\n");
+                    foundMatch = true;
+                }
+            }
+            break;
+    }
+        
+
+        // Daca nu avem rezultat bun, afisam mesajul in text area
+        if (!foundMatch) {
+            jTextArea2.append("Nu au fost gasite produse care sa corespunda filtrelor.\n");
+        }
+    }//GEN-LAST:event_ButtonFiltrare1ActionPerformed
+
+    private void jTextFieldNumarPrizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNumarPrizeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNumarPrizeActionPerformed
+
+    private void jComboBoxWifiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxWifiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxWifiActionPerformed
+
+    private void jComboBoxControlVocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxControlVocalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxControlVocalActionPerformed
+
+    private void TextFieldPutereMaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPutereMaxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldPutereMaxActionPerformed
+
+    private void ButtonFiltrareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFiltrareActionPerformed
+        // TODO add your handling code here:
+
+        // Preluam valorile de filtrare
+        String culoare = TextFieldCuloare.getText().trim();
+        String marca = TextFieldMarca.getText().trim();
+        String putereMinText = TextFieldPutereMin.getText().trim();
+        String putereMaxText = TextFieldPutereMax.getText().trim();
+
+        String controlVocalText = (String) jComboBoxControlVocal.getSelectedItem();
+        String wifiText = (String) jComboBoxWifi.getSelectedItem();
+        String producator = jTextFieldProducator.getText().trim();
+
+        String numarPrizeText = jTextFieldNumarPrize.getText().trim();
+        String lungimeCabluText = jTextFieldLungimeCablu.getText().trim();
+        String tipStecher = jTextFieldTipStecher.getText().trim();
+
+        // Convertim valorile din ComboBox in Boolean
+        Boolean controlVocal = controlVocalText == null ? null : Boolean.parseBoolean(controlVocalText);
+        Boolean wifi = wifiText == null ? null : Boolean.parseBoolean(wifiText);
+
+        // Nu mai stiu daca sunt importante
+        Byte putereMin = putereMinText.isEmpty() ? null : Byte.parseByte(putereMinText);
+        Byte putereMax = putereMaxText.isEmpty() ? null : Byte.parseByte(putereMaxText);
+
+        // Combo Boxul ul care zice ce va fi filtrat
+        String selectedCategory = (String) jComboBox1.getSelectedItem();
+        
+        // String functions
+        String RezistentaApaText = (String) jComboBoxRezistentaApa.getSelectedItem();
+        String conectivitateWifiText = (String) jComboBoxConectivitateWifi.getSelectedItem();
+        
+        String senzorLumina = jTextFieldSenzorLumina.getText().trim();
+        
+        // Empty the text area
+        jTextArea1.setText("");
+
+        boolean foundMatch = false;  // Variabila pentru daca un rezultat e bun
+
+        switch (selectedCategory) {
+            case "Lampa":
+            for (Lampa lampa : lampi) {
+                boolean matchesCuloare = true;
+                boolean matchesMarca = true;
+                boolean matchesPutere = true;
+
+                if (!culoare.isEmpty() && !lampa.getCuloare().equalsIgnoreCase(culoare)) {
+                    matchesCuloare = false;
+                }
+
+                if (!marca.isEmpty() && !lampa.getMarca().equalsIgnoreCase(marca)) {
+                    matchesMarca = false;
+                }
+
+                if (putereMin != null && lampa.getPutere() < putereMin) {
+                    matchesPutere = false;
+                }
+
                 if (putereMax != null && lampa.getPutere() > putereMax) {
                     matchesPutere = false;
                 }
@@ -455,21 +866,21 @@ public class GUI2 extends javax.swing.JFrame {
                 }
             }
             break;
-            
-        case "Lampa Smart Interior":
-             for (LampaSmartInterior smartLampa : lampiSmartExtra) {
+
+            case "Lampa Smart Interior":
+            for (LampaSmartInterior smartLampa : lampiSmartExtra) {
                 boolean matchesControlVocal = true;
                 boolean matchesWifi = true;
                 boolean matchesProducator = true;
-                
+
                 if (controlVocal != null && smartLampa.getControlVocal() != controlVocal) {
                     matchesControlVocal = false;
                 }
-                
+
                 if (wifi != null && smartLampa.getWifi() != wifi) {
                     matchesWifi = false;
                 }
-                
+
                 if (!producator.isEmpty() && !smartLampa.getProducator().equalsIgnoreCase(producator)) {
                     matchesProducator = false;
                 }
@@ -480,72 +891,115 @@ public class GUI2 extends javax.swing.JFrame {
                 }
             }
             break;
-            
-        case "Prelungitor":
-        for (Prelungitor prelungitor : prelungitoareExtra) {
-            boolean matchesNumarPrize = true;
-            boolean matchesLungimeCablu = true;
-            boolean matchesTipStecher = true;
-            
-            if (!numarPrizeText.isEmpty()) {
-                int numarPrize = Integer.parseInt(numarPrizeText);
-                if (prelungitor.getNumarPrize() != numarPrize) {
-                    matchesNumarPrize = false;
+
+            case "Prelungitor":
+            for (Prelungitor prelungitor : prelungitoareExtra) {
+                boolean matchesNumarPrize = true;
+                boolean matchesLungimeCablu = true;
+                boolean matchesTipStecher = true;
+
+                if (!numarPrizeText.isEmpty()) {
+                    int numarPrize = Integer.parseInt(numarPrizeText);
+                    if (prelungitor.getNumarPrize() != numarPrize) {
+                        matchesNumarPrize = false;
+                    }
+                }
+
+                if (!lungimeCabluText.isEmpty()) {
+                    int lungimeCablu = Integer.parseInt(lungimeCabluText);
+                    if (prelungitor.getLungimeCablu() < lungimeCablu) {
+                        matchesLungimeCablu = false;
+                    }
+                }
+
+                if (!tipStecher.isEmpty() && !prelungitor.getTipStecher().equalsIgnoreCase(tipStecher)) {
+                    matchesTipStecher = false;
+                }
+
+                if (matchesNumarPrize && matchesLungimeCablu && matchesTipStecher) {
+                    jTextArea1.append(prelungitor.toString() + "\n");
+                    foundMatch = true;
                 }
             }
-
-            if (!lungimeCabluText.isEmpty()) {
-                int lungimeCablu = Integer.parseInt(lungimeCabluText);
-                if (prelungitor.getLungimeCablu() < lungimeCablu) {
-                    matchesLungimeCablu = false;
-                }
-            }
-
-            if (!tipStecher.isEmpty() && !prelungitor.getTipStecher().equalsIgnoreCase(tipStecher)) {
-                matchesTipStecher = false;
-            }
-
-            if (matchesNumarPrize && matchesLungimeCablu && matchesTipStecher) {
-                jTextArea1.append(prelungitor.toString() + "\n");
-                foundMatch = true;
-            }
-        }
-        break;
-            
-        default:
-            jTextArea1.append("Nu exista produse de aceasta categorie!\n");
             break;
-    }
+            
+            default:
+            jTextArea1.append("Nu exista produse de aceasta categorie!\n");
+}
 
-    // Daca nu avem rezultat bun, afisam mesajul in text area
-    if (!foundMatch) {
-        jTextArea1.append("Nu au fost gasite produse care sa corespunda filtrelor.\n");
-    }
+        // Daca nu avem rezultat bun, afisam mesajul in text area
+        if (!foundMatch) {
+            jTextArea1.append("Nu au fost gasite produse care sa corespunda filtrelor.\n");
+        }
     }//GEN-LAST:event_ButtonFiltrareActionPerformed
-
-    private void TextFieldCuloareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldCuloareActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldCuloareActionPerformed
 
     private void TextFieldPutereMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPutereMinActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextFieldPutereMinActionPerformed
 
-    private void TextFieldPutereMaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPutereMaxActionPerformed
+    private void TextFieldCuloareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldCuloareActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldPutereMaxActionPerformed
+    }//GEN-LAST:event_TextFieldCuloareActionPerformed
 
-    private void jComboBoxControlVocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxControlVocalActionPerformed
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxControlVocalActionPerformed
+        String selectedItem = (String) jComboBox1.getSelectedItem();
+        jTextArea1.setText(""); // Goleste text area
 
-    private void jComboBoxWifiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxWifiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxWifiActionPerformed
+        switch (selectedItem) {
+            case "Lampa":
+            for (Lampa lampa : lampi) {
+                jTextArea1.append(lampa.toString() + "\n");
+            }
+            break;
+            case "Lampa Smart Interior":
+            for (LampaSmartInterior smartLampa : lampiSmartExtra) {
+                jTextArea1.append(smartLampa.toString() + "\n");
+            }
+            break;
+            case "Prelungitor":
+            for (Prelungitor prelungitor : prelungitoareExtra) {
+                jTextArea1.append(prelungitor.toString() + "\n");
+            }
+            break;
 
-    private void jTextFieldNumarPrizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNumarPrizeActionPerformed
+            case "Sursa Iluminat":
+            for (SursaIluminat sursa : surseIluminat) {
+                jTextArea1.append(sursa.toString() + "\n");
+            }
+            break;
+
+            case "Lampa Smart Exterior":
+            for (LampaSmartExterior lampaExterior : lampiSmartExterior) {
+                jTextArea1.append(lampaExterior.toString() + "\n");
+            }
+            break;
+        }
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void TextFieldPutereMin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPutereMin1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNumarPrizeActionPerformed
+    }//GEN-LAST:event_TextFieldPutereMin1ActionPerformed
+
+    private void jComboBoxRezistentaApaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRezistentaApaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxRezistentaApaActionPerformed
+
+    private void jComboBoxConectivitateWifiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxConectivitateWifiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxConectivitateWifiActionPerformed
+
+    private void jTextFieldSenzorLuminaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSenzorLuminaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldSenzorLuminaActionPerformed
+
+    private void TextFieldPutereMax1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPutereMax1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldPutereMax1ActionPerformed
+
+    private void jTextFieldtipSursaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldtipSursaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldtipSursaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -584,12 +1038,20 @@ public class GUI2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonFiltrare;
+    private javax.swing.JButton ButtonFiltrare1;
     private javax.swing.JTextField TextFieldCuloare;
+    private javax.swing.JTextField TextFieldCuloare1;
     private javax.swing.JTextField TextFieldMarca;
+    private javax.swing.JTextField TextFieldMarca1;
     private javax.swing.JTextField TextFieldPutereMax;
+    private javax.swing.JTextField TextFieldPutereMax1;
     private javax.swing.JTextField TextFieldPutereMin;
+    private javax.swing.JTextField TextFieldPutereMin1;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBoxConectivitateWifi;
     private javax.swing.JComboBox<String> jComboBoxControlVocal;
+    private javax.swing.JComboBox<String> jComboBoxRezistentaApa;
     private javax.swing.JComboBox<String> jComboBoxWifi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -599,8 +1061,24 @@ public class GUI2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -610,11 +1088,17 @@ public class GUI2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextField jTextFieldDurataViata;
+    private javax.swing.JTextField jTextFieldFluxLuminos;
     private javax.swing.JTextField jTextFieldLungimeCablu;
     private javax.swing.JTextField jTextFieldNumarPrize;
     private javax.swing.JTextField jTextFieldProducator;
+    private javax.swing.JTextField jTextFieldSenzorLumina;
     private javax.swing.JTextField jTextFieldTipStecher;
+    private javax.swing.JTextField jTextFieldtipSursa;
     // End of variables declaration//GEN-END:variables
 }
