@@ -1,4 +1,10 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -32,7 +38,7 @@ public class GUI2 extends javax.swing.JFrame {
         lampi.add(new Lampa("Lampa tip B", (byte) 11, "Roz", "LED", "Samsung"));
         lampi.add(new Lampa("Lampa tip C", (byte) 12, "Verde", "LED", "Ikea"));
         lampi.add(new Lampa("Lampa tip D", (byte) 13, "Alb", "LED", "Philips"));
-        lampi.add(new Lampa("Lampa tip E", (byte) 14, "Roz", "Incandescentă", "Samsung"));
+        lampi.add(new Lampa("Lampa tip E", (byte) 14, "Roz", "Incandescenta", "Samsung"));
         lampi.add(new Lampa("Lampa tip F", (byte) 15, "Verde", "Halogen", "Ikea"));
         lampi.add(new Lampa("Lampa tip G", (byte) 16, "Alb", "LED", "Philips"));
         lampi.add(new Lampa("Lampa tip H", (byte) 17, "Roz", "Neon", "Samsung"));
@@ -52,15 +58,15 @@ public class GUI2 extends javax.swing.JFrame {
         prelungitoareExtra.add(new Prelungitor(7, false, 13, "Prelungitor 10", (byte) 29, "Maro", "LED", "Marca 10", "Tip Stecher 1", false));
 
 
-        lampiSmartExtra.add(new LampaSmartInterior("Smart 1", (byte) 18, "Roșu", "LED", "Microsoft", true, false, "Perete", (byte) 8, "Microsoft"));
+        lampiSmartExtra.add(new LampaSmartInterior("Smart 1", (byte) 18, "Rosu", "LED", "Microsoft", true, false, "Perete", (byte) 8, "Microsoft"));
         lampiSmartExtra.add(new LampaSmartInterior("Smart 2", (byte) 20, "Albastru", "Halogen", "Apple", false, true, "Tavan", (byte) 10, "Apple"));
-        lampiSmartExtra.add(new LampaSmartInterior("Smart 3", (byte) 22, "Galben", "LED", "Samsung", true, true, "Masă", (byte) 12, "Samsung"));
+        lampiSmartExtra.add(new LampaSmartInterior("Smart 3", (byte) 22, "Galben", "LED", "Samsung", true, true, "Masa", (byte) 12, "Samsung"));
         lampiSmartExtra.add(new LampaSmartInterior("Smart 4", (byte) 24, "Verde", "Halogen", "Microsoft", false, false, "Tavan", (byte) 14, "Microsoft"));
         lampiSmartExtra.add(new LampaSmartInterior("Smart 5", (byte) 26, "Mov", "LED", "Apple", true, true, "Perete", (byte) 16, "Apple"));
-        lampiSmartExtra.add(new LampaSmartInterior("Smart 6", (byte) 28, "Alb", "LED", "Samsung", true, false, "Masă", (byte) 18, "Samsung"));
+        lampiSmartExtra.add(new LampaSmartInterior("Smart 6", (byte) 28, "Alb", "LED", "Samsung", true, false, "Masa", (byte) 18, "Samsung"));
         lampiSmartExtra.add(new LampaSmartInterior("Smart 7", (byte) 30, "Negru", "Halogen", "Microsoft", false, true, "Tavan", (byte) 20, "Microsoft"));
         lampiSmartExtra.add(new LampaSmartInterior("Smart 8", (byte) 32, "Gri", "LED", "Apple", true, true, "Perete", (byte) 22, "Apple"));
-        lampiSmartExtra.add(new LampaSmartInterior("Smart 9", (byte) 34, "Portocaliu", "LED", "Samsung", true, false, "Masă", (byte) 24, "Samsung"));
+        lampiSmartExtra.add(new LampaSmartInterior("Smart 9", (byte) 34, "Portocaliu", "LED", "Samsung", true, false, "Masa", (byte) 24, "Samsung"));
         lampiSmartExtra.add(new LampaSmartInterior("Smart 10", (byte) 36, "Roz", "Halogen", "Microsoft", false, true, "Tavan", (byte) 26, "Microsoft"));
         
         lampiSmartExterior.add(new LampaSmartExterior("Smart LED Exterior", (byte) 50, "alb cald", "LED", "Philips Hue", true, "perete", true, "Miscare", (byte) 12));
@@ -128,6 +134,9 @@ public class GUI2 extends javax.swing.JFrame {
         jTextFieldNumarPrize = new javax.swing.JTextField();
         jTextFieldLungimeCablu = new javax.swing.JTextField();
         jTextFieldTipStecher = new javax.swing.JTextField();
+        CitireBtn = new javax.swing.JButton();
+        AdaugaBtn = new javax.swing.JButton();
+        SalvareBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
@@ -186,6 +195,7 @@ public class GUI2 extends javax.swing.JFrame {
         jLabel5.setText("Putere");
 
         TextFieldCuloare.setText("culoare");
+        TextFieldCuloare.setPreferredSize(new java.awt.Dimension(100, 22));
         TextFieldCuloare.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextFieldCuloareActionPerformed(evt);
@@ -193,8 +203,11 @@ public class GUI2 extends javax.swing.JFrame {
         });
 
         TextFieldMarca.setText("marca");
+        TextFieldMarca.setPreferredSize(new java.awt.Dimension(100, 22));
+        TextFieldMarca.setRequestFocusEnabled(false);
 
         TextFieldPutereMin.setText("0");
+        TextFieldPutereMin.setPreferredSize(new java.awt.Dimension(100, 22));
         TextFieldPutereMin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextFieldPutereMinActionPerformed(evt);
@@ -209,6 +222,7 @@ public class GUI2 extends javax.swing.JFrame {
         });
 
         TextFieldPutereMax.setText("0");
+        TextFieldPutereMax.setPreferredSize(new java.awt.Dimension(100, 22));
         TextFieldPutereMax.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextFieldPutereMaxActionPerformed(evt);
@@ -229,6 +243,7 @@ public class GUI2 extends javax.swing.JFrame {
         jLabel11.setText("Producator");
 
         jTextFieldProducator.setText("producator");
+        jTextFieldProducator.setPreferredSize(new java.awt.Dimension(100, 22));
 
         jComboBoxControlVocal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "true", "false" }));
         jComboBoxControlVocal.addActionListener(new java.awt.event.ActionListener() {
@@ -254,6 +269,7 @@ public class GUI2 extends javax.swing.JFrame {
         jLabel16.setText("Tip Stecher");
 
         jTextFieldNumarPrize.setText("NrPrize");
+        jTextFieldNumarPrize.setPreferredSize(new java.awt.Dimension(100, 22));
         jTextFieldNumarPrize.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNumarPrizeActionPerformed(evt);
@@ -261,8 +277,31 @@ public class GUI2 extends javax.swing.JFrame {
         });
 
         jTextFieldLungimeCablu.setText("LungimeCablu");
+        jTextFieldLungimeCablu.setPreferredSize(new java.awt.Dimension(100, 22));
 
         jTextFieldTipStecher.setText("TipStecher");
+        jTextFieldTipStecher.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        CitireBtn.setText("Citeste din fisier");
+        CitireBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CitireBtnActionPerformed(evt);
+            }
+        });
+
+        AdaugaBtn.setText("Adauga in vector (din fisier)");
+        AdaugaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdaugaBtnActionPerformed(evt);
+            }
+        });
+
+        SalvareBtn.setText("Salvare continut TextArea");
+        SalvareBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalvareBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -273,58 +312,67 @@ public class GUI2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
+                .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2))
+                    .addComponent(SalvareBtn)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(TextFieldPutereMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(TextFieldPutereMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(TextFieldCuloare, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(TextFieldMarca, javax.swing.GroupLayout.Alignment.LEADING))))
-                    .addComponent(ButtonFiltrare))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel5))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(TextFieldPutereMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel6))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(TextFieldPutereMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel7))
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(TextFieldCuloare, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(TextFieldMarca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(ButtonFiltrare))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(CitireBtn)
+                                    .addGap(142, 142, 142)))
+                            .addComponent(AdaugaBtn))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxControlVocal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel8)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel10))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldProducator, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxWifi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel15)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel16))
-                        .addGap(34, 34, 34)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldTipStecher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldLungimeCablu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldNumarPrize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(184, Short.MAX_VALUE))
+                            .addComponent(jLabel12)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBoxControlVocal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel8)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel10))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldProducator, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBoxWifi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel15)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jLabel16))
+                                .addGap(34, 34, 34)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldTipStecher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldLungimeCablu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldNumarPrize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(138, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -368,21 +416,29 @@ public class GUI2 extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ButtonFiltrare)
                             .addComponent(jLabel12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13)
-                            .addComponent(jTextFieldNumarPrize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(jTextFieldLungimeCablu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel16)
-                            .addComponent(jTextFieldTipStecher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel15)))
-                .addContainerGap(115, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 24, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jTextFieldNumarPrize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jTextFieldLungimeCablu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jTextFieldTipStecher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(9, 9, 9)
+                                .addComponent(jLabel15))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(CitireBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(AdaugaBtn)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SalvareBtn)
+                .addGap(74, 74, 74))
         );
 
         jTabbedPane1.addTab("Cosmin", jPanel1);
@@ -1001,6 +1057,118 @@ public class GUI2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldtipSursaActionPerformed
 
+    private void CitireBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CitireBtnActionPerformed
+        // TODO add your handling code here:
+        try (BufferedReader br = new BufferedReader(new FileReader("instante.txt"))) {
+        String line;
+        StringBuilder sb = new StringBuilder();
+
+        // Citim fisierul linie cu linie pana la null
+        while ((line = br.readLine()) != null) {
+            sb.append(line).append("\n"); // adaugam fiecare linie la StringBuilder
+        }
+
+        // JTextArea1 afiseaza StringBuilder
+        jTextArea1.setText(sb.toString());
+    } catch (IOException e) {
+        // mesaj eroare
+        JOptionPane.showMessageDialog(this, "Eroare la citirea din fisier: " + e.getMessage(),
+                "Eroare", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_CitireBtnActionPerformed
+
+    private void AdaugaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaugaBtnActionPerformed
+        // TODO add your handling code here:
+        try (BufferedReader br = new BufferedReader(new FileReader("instante.txt"))) {
+        String line;
+
+        while ((line = br.readLine()) != null) {
+            // delimitatorul ","
+            String[] fields = line.split(",");
+
+            // Primul camp determina clasa
+            switch (fields[0]) {
+                case "Lampa":
+                    lampi.add(new Lampa(
+                            fields[1],                          // Nume lampa
+                            Byte.parseByte(fields[2]),          // Putere
+                            fields[3],                          // Culoare
+                            fields[4],                          // Tip bec
+                            fields[5]                           // Marca
+                    ));
+                    break;
+
+                case "LampaSmartInterior":
+                    lampiSmartExtra.add(new LampaSmartInterior(
+                            fields[1],                          // Nume lampa
+                            Byte.parseByte(fields[2]),          // Putere
+                            fields[3],                          // Culoare
+                            fields[4],                          // Tip bec
+                            fields[5],                          // Marca
+                            Boolean.parseBoolean(fields[6]),    // Control vocal
+                            Boolean.parseBoolean(fields[7]),    // Wifi
+                            fields[8],                          // Tip montaj
+                            Byte.parseByte(fields[9]),          // Durata baterie
+                            fields[10]                          // Producator
+                    ));
+                    break;
+
+                case "Prelungitor":
+                    prelungitoareExtra.add(new Prelungitor(
+                            Integer.parseInt(fields[1]),        // Numar prize
+                            Boolean.parseBoolean(fields[2]),    // Protectie supratensiune
+                            Integer.parseInt(fields[3]),        // Lungime cablu
+                            fields[4],                          // Nume prelungitor
+                            Byte.parseByte(fields[5]),          // Putere
+                            fields[6],                          // Culoare
+                            fields[7],                          // Tip bec
+                            fields[8],                          // Marca
+                            fields[9],                          // Tip stecher
+                            Boolean.parseBoolean(fields[10])    // Indicator pornit
+                    ));
+                    break;
+            }
+        }
+
+        JOptionPane.showMessageDialog(this, 
+            "Datele au fost adaugate cu succes!", 
+            "Succes", JOptionPane.INFORMATION_MESSAGE);
+
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(this, 
+            "Eroare la citirea din fisier: " + e.getMessage(), 
+            "Eroare", JOptionPane.ERROR_MESSAGE);
+        
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, 
+            "Eroare de format: " + e.getMessage(), 
+            "Eroare", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_AdaugaBtnActionPerformed
+
+    private void SalvareBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvareBtnActionPerformed
+        // TODO add your handling code here:
+        // content din jTextArea1
+    String content = jTextArea1.getText();
+
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter("iesire.txt"))) {
+        // Scriem content in fisierul iesire.txt
+        bw.write(content);
+        bw.newLine();
+
+        // mesaj succes
+        JOptionPane.showMessageDialog(this, 
+            "Coninutul a fost salvat cu succes in iesire.txt!", 
+            "SUCCES", JOptionPane.INFORMATION_MESSAGE);
+    } catch (IOException e) {
+        // mesaj eroare
+        JOptionPane.showMessageDialog(this, 
+            "Eroare la salvarea fisierului: " + e.getMessage(), 
+            "EROARE", JOptionPane.ERROR_MESSAGE);
+    }
+    
+    }//GEN-LAST:event_SalvareBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1037,8 +1205,11 @@ public class GUI2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AdaugaBtn;
     private javax.swing.JButton ButtonFiltrare;
     private javax.swing.JButton ButtonFiltrare1;
+    private javax.swing.JButton CitireBtn;
+    private javax.swing.JButton SalvareBtn;
     private javax.swing.JTextField TextFieldCuloare;
     private javax.swing.JTextField TextFieldCuloare1;
     private javax.swing.JTextField TextFieldMarca;
