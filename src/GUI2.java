@@ -168,6 +168,9 @@ public class GUI2 extends javax.swing.JFrame {
         TextFieldCuloare1 = new javax.swing.JTextField();
         TextFieldPutereMax1 = new javax.swing.JTextField();
         jTextFieldtipSursa = new javax.swing.JTextField();
+        CitireBtn1 = new javax.swing.JButton();
+        AdaugaBtn1 = new javax.swing.JButton();
+        SalvareBtn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -416,7 +419,7 @@ public class GUI2 extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ButtonFiltrare)
                             .addComponent(jLabel12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 24, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 167, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -546,6 +549,27 @@ public class GUI2 extends javax.swing.JFrame {
             }
         });
 
+        CitireBtn1.setText("READ");
+        CitireBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CitireBtn1ActionPerformed(evt);
+            }
+        });
+
+        AdaugaBtn1.setText("Se adauga din fisier");
+        AdaugaBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdaugaBtn1ActionPerformed(evt);
+            }
+        });
+
+        SalvareBtn1.setText("SAVE");
+        SalvareBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalvareBtn1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -553,65 +577,73 @@ public class GUI2 extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(49, 49, 49)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel18))
-                    .addComponent(ButtonFiltrare1)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel22)
-                            .addComponent(jLabel23))
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(TextFieldPutereMin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel21))
-                            .addComponent(TextFieldMarca1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextFieldCuloare1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(TextFieldPutereMax1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel20)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel28)
-                    .addComponent(jLabel24)
-                    .addComponent(jLabel31)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel25)
-                            .addComponent(jLabel27)
-                            .addComponent(jLabel26))
-                        .addGap(44, 44, 44)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldDurataViata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldFluxLuminos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldtipSursa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addContainerGap()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel30)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBoxConectivitateWifi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(24, 24, 24)
+                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(49, 49, 49)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel18))
+                            .addComponent(ButtonFiltrare1)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel29)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBoxRezistentaApa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel32)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel19)
+                                    .addComponent(jLabel22)
+                                    .addComponent(jLabel23))
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextFieldSenzorLumina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(TextFieldPutereMin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel21))
+                                    .addComponent(TextFieldMarca1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TextFieldCuloare1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(56, 56, 56)
+                                .addComponent(TextFieldPutereMax1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel20)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel28)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel31)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel25)
+                                    .addComponent(jLabel27)
+                                    .addComponent(jLabel26))
+                                .addGap(44, 44, 44)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldDurataViata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldFluxLuminos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldtipSursa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel30)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jComboBoxConectivitateWifi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel29)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jComboBoxRezistentaApa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel32)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextFieldSenzorLumina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(257, 257, 257)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AdaugaBtn1)
+                            .addComponent(CitireBtn1)
+                            .addComponent(SalvareBtn1))))
                 .addContainerGap(179, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -674,7 +706,13 @@ public class GUI2 extends javax.swing.JFrame {
                             .addComponent(jTextFieldFluxLuminos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(27, 27, 27)
                         .addComponent(jLabel31)))
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(CitireBtn1)
+                .addGap(18, 18, 18)
+                .addComponent(AdaugaBtn1)
+                .addGap(18, 18, 18)
+                .addComponent(SalvareBtn1)
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Alex", jPanel2);
@@ -684,20 +722,146 @@ public class GUI2 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addContainerGap()
                 .addComponent(jTabbedPane1)
-                .addContainerGap())
+                .addGap(14, 14, 14))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 687, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void SalvareBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvareBtn1ActionPerformed
+        // TODO add your handling code here:
+        String continut = jTextArea2.getText();
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("iesire2.txt"))) {
+            // Scriem continutul in fisierul iesire2.txt
+            bw.write(continut);
+            bw.newLine();
+
+            // mesaj succes
+            JOptionPane.showMessageDialog(this,
+                "Coninutul a fost salvat cu succes in iesire2.txt!",
+                "SUCCES", JOptionPane.INFORMATION_MESSAGE);
+        } catch (IOException e) {
+            // mesaj eroare
+            JOptionPane.showMessageDialog(this,
+                "Eroare la salvarea fisierului: " + e.getMessage(),
+                "EROARE", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }//GEN-LAST:event_SalvareBtn1ActionPerformed
+
+    private void AdaugaBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaugaBtn1ActionPerformed
+        // TODO add your handling code here:
+        try (BufferedReader br = new BufferedReader(new FileReader("instante2.txt"))) {
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                // delimitatorul ","
+                String[] fields = line.split(",");
+
+                // Primul camp determina clasa
+                switch (fields[0]) {
+                    case "Lampa":
+                    lampi.add(new Lampa(
+                        fields[1],                          // Nume lampa
+                        Byte.parseByte(fields[2]),          // Putere
+                        fields[3],                          // Culoare
+                        fields[4],                          // Tip bec
+                        fields[5]                           // Marca
+                    ));
+                    break;
+
+                    case "LampaSmartExterior":
+                    lampiSmartExterior.add(new LampaSmartExterior(
+                        fields[1],                          // Nume lampa
+                        Byte.parseByte(fields[2]),          // Putere
+                        fields[3],                          // Culoare
+                        fields[4],                          // Tip bec
+                        fields[5],                          // Marca
+                        Boolean.parseBoolean(fields[6]),    // Rezistenta Apa
+                        fields[8],                          // Tip montaj
+                        Boolean.parseBoolean(fields[7]),    // conectivitate Wifi
+                        fields[9],                          // Senzor lumina
+                        Byte.parseByte(fields[10])                          // durata Baterie
+                    ));
+                    break;
+
+                    case "SursaIluminat":
+                    surseIluminat.add(new SursaIluminat(
+                        fields[1],                          // Tipul sursei
+                        Integer.parseInt(fields[2]),        // durata viata
+                        Integer.parseInt(fields[3])         // flux luminos
+                    ));
+                    break;
+                }
+            }
+            JOptionPane.showMessageDialog(this,
+                "Datele au fost adaugate cu succes!",
+                "Succes", JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this,
+                "Eroare la citirea din fisier: " + e.getMessage(),
+                "Eroare", JOptionPane.ERROR_MESSAGE);
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this,
+                "Eroare de format: " + e.getMessage(),
+                "Eroare", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_AdaugaBtn1ActionPerformed
+
+    private void CitireBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CitireBtn1ActionPerformed
+        // TODO add your handling code here:
+        try (BufferedReader br = new BufferedReader(new FileReader("instante2.txt"))) {
+            String line;
+            StringBuilder sb = new StringBuilder();
+
+            // Citim fisierul linie cu linie pana la null
+            while ((line = br.readLine()) != null) {
+                sb.append(line).append("\n"); // adaugam fiecare linie la StringBuilder
+            }
+
+            // JTextArea1 afiseaza StringBuilder
+            jTextArea2.setText(sb.toString());
+        } catch (IOException e) {
+            // mesaj eroare
+            JOptionPane.showMessageDialog(this, "Eroare la citirea din fisier: " + e.getMessage(),
+                "Eroare", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_CitireBtn1ActionPerformed
+
+    private void jTextFieldtipSursaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldtipSursaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldtipSursaActionPerformed
+
+    private void TextFieldPutereMax1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPutereMax1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldPutereMax1ActionPerformed
+
+    private void jTextFieldSenzorLuminaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSenzorLuminaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldSenzorLuminaActionPerformed
+
+    private void jComboBoxConectivitateWifiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxConectivitateWifiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxConectivitateWifiActionPerformed
+
+    private void jComboBoxRezistentaApaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRezistentaApaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxRezistentaApaActionPerformed
+
+    private void TextFieldPutereMin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPutereMin1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldPutereMin1ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
@@ -705,7 +869,7 @@ public class GUI2 extends javax.swing.JFrame {
 
     private void ButtonFiltrare1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFiltrare1ActionPerformed
         // TODO add your handling code here:
-                // Preluam valorile de filtrare
+        // Preluam valorile de filtrare
         String culoare = TextFieldCuloare1.getText().trim();
         String marca = TextFieldMarca1.getText().trim();
         String putereMinText = TextFieldPutereMin1.getText().trim();
@@ -717,7 +881,7 @@ public class GUI2 extends javax.swing.JFrame {
 
         // Combo Boxul ul care zice ce va fi filtrat
         String selectedCategory = (String) jComboBox3.getSelectedItem();
-        
+
         // String functions
         String RezistentaApaText = (String) jComboBoxRezistentaApa.getSelectedItem();
         String conectivitateWifiText = (String) jComboBoxConectivitateWifi.getSelectedItem();
@@ -725,7 +889,7 @@ public class GUI2 extends javax.swing.JFrame {
         String durataViataText = jTextFieldDurataViata.getText().trim();
         String senzorLumina = jTextFieldSenzorLumina.getText().trim();
         String fluxLuminosText = jTextFieldFluxLuminos.getText().trim();
-        
+
         // Boolean functions
         Boolean rezistentaApa = RezistentaApaText == null ? null : Boolean.parseBoolean(RezistentaApaText);
         Boolean conectivitateWifi = conectivitateWifiText == null ? null : Boolean.parseBoolean(conectivitateWifiText);
@@ -768,7 +932,7 @@ public class GUI2 extends javax.swing.JFrame {
                 }
             }
             break;
-        
+
             case "Lampa Smart Exterior":
             for (LampaSmartExterior lampaExterior : lampiSmartExterior) {
                 boolean matchesRezistentaApa = true;
@@ -793,7 +957,7 @@ public class GUI2 extends javax.swing.JFrame {
                 }
             }
             break;
-            
+
             case "Sursa de Iluminat":
             for (SursaIluminat sursa : surseIluminat) {
                 boolean matchesTipSursa = true;
@@ -803,14 +967,13 @@ public class GUI2 extends javax.swing.JFrame {
                 if (!tipSursa.isEmpty() && !sursa.getTipSursa().equalsIgnoreCase(tipSursa)) {
                     matchesTipSursa = false;
                 }
-                
-                
+
                 if (!durataViataText.isEmpty()) {
-                   int durataViata = Integer.parseInt(durataViataText);
-                   if(sursa.getDurataViata() != durataViata)
-                   {
-                       matchesDurataViata = false;
-                   }
+                    int durataViata = Integer.parseInt(durataViataText);
+                    if(sursa.getDurataViata() != durataViata)
+                    {
+                        matchesDurataViata = false;
+                    }
                 }
 
                 if(!fluxLuminosText.isEmpty())
@@ -828,14 +991,125 @@ public class GUI2 extends javax.swing.JFrame {
                 }
             }
             break;
-    }
-        
+        }
 
         // Daca nu avem rezultat bun, afisam mesajul in text area
         if (!foundMatch) {
             jTextArea2.append("Nu au fost gasite produse care sa corespunda filtrelor.\n");
         }
     }//GEN-LAST:event_ButtonFiltrare1ActionPerformed
+
+    private void SalvareBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvareBtnActionPerformed
+        // TODO add your handling code here:
+        // content din jTextArea1
+        String content = jTextArea1.getText();
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("iesire.txt"))) {
+            // Scriem content in fisierul iesire.txt
+            bw.write(content);
+            bw.newLine();
+
+            // mesaj succes
+            JOptionPane.showMessageDialog(this,
+                "Coninutul a fost salvat cu succes in iesire.txt!",
+                "SUCCES", JOptionPane.INFORMATION_MESSAGE);
+        } catch (IOException e) {
+            // mesaj eroare
+            JOptionPane.showMessageDialog(this,
+                "Eroare la salvarea fisierului: " + e.getMessage(),
+                "EROARE", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }//GEN-LAST:event_SalvareBtnActionPerformed
+
+    private void AdaugaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaugaBtnActionPerformed
+        // TODO add your handling code here:
+        try (BufferedReader br = new BufferedReader(new FileReader("instante.txt"))) {
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                // delimitatorul ","
+                String[] fields = line.split(",");
+
+                // Primul camp determina clasa
+                switch (fields[0]) {
+                    case "Lampa":
+                    lampi.add(new Lampa(
+                        fields[1],                          // Nume lampa
+                        Byte.parseByte(fields[2]),          // Putere
+                        fields[3],                          // Culoare
+                        fields[4],                          // Tip bec
+                        fields[5]                           // Marca
+                    ));
+                    break;
+
+                    case "LampaSmartInterior":
+                    lampiSmartExtra.add(new LampaSmartInterior(
+                        fields[1],                          // Nume lampa
+                        Byte.parseByte(fields[2]),          // Putere
+                        fields[3],                          // Culoare
+                        fields[4],                          // Tip bec
+                        fields[5],                          // Marca
+                        Boolean.parseBoolean(fields[6]),    // Control vocal
+                        Boolean.parseBoolean(fields[7]),    // Wifi
+                        fields[8],                          // Tip montaj
+                        Byte.parseByte(fields[9]),          // Durata baterie
+                        fields[10]                          // Producator
+                    ));
+                    break;
+
+                    case "Prelungitor":
+                    prelungitoareExtra.add(new Prelungitor(
+                        Integer.parseInt(fields[1]),        // Numar prize
+                        Boolean.parseBoolean(fields[2]),    // Protectie supratensiune
+                        Integer.parseInt(fields[3]),        // Lungime cablu
+                        fields[4],                          // Nume prelungitor
+                        Byte.parseByte(fields[5]),          // Putere
+                        fields[6],                          // Culoare
+                        fields[7],                          // Tip bec
+                        fields[8],                          // Marca
+                        fields[9],                          // Tip stecher
+                        Boolean.parseBoolean(fields[10])    // Indicator pornit
+                    ));
+                    break;
+                }
+            }
+
+            JOptionPane.showMessageDialog(this,
+                "Datele au fost adaugate cu succes!",
+                "Succes", JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this,
+                "Eroare la citirea din fisier: " + e.getMessage(),
+                "Eroare", JOptionPane.ERROR_MESSAGE);
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this,
+                "Eroare de format: " + e.getMessage(),
+                "Eroare", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_AdaugaBtnActionPerformed
+
+    private void CitireBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CitireBtnActionPerformed
+        // TODO add your handling code here:
+        try (BufferedReader br = new BufferedReader(new FileReader("instante.txt"))) {
+            String line;
+            StringBuilder sb = new StringBuilder();
+
+            // Citim fisierul linie cu linie pana la null
+            while ((line = br.readLine()) != null) {
+                sb.append(line).append("\n"); // adaugam fiecare linie la StringBuilder
+            }
+
+            // JTextArea1 afiseaza StringBuilder
+            jTextArea1.setText(sb.toString());
+        } catch (IOException e) {
+            // mesaj eroare
+            JOptionPane.showMessageDialog(this, "Eroare la citirea din fisier: " + e.getMessage(),
+                "Eroare", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_CitireBtnActionPerformed
 
     private void jTextFieldNumarPrizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNumarPrizeActionPerformed
         // TODO add your handling code here:
@@ -880,13 +1154,13 @@ public class GUI2 extends javax.swing.JFrame {
 
         // Combo Boxul ul care zice ce va fi filtrat
         String selectedCategory = (String) jComboBox1.getSelectedItem();
-        
+
         // String functions
         String RezistentaApaText = (String) jComboBoxRezistentaApa.getSelectedItem();
         String conectivitateWifiText = (String) jComboBoxConectivitateWifi.getSelectedItem();
-        
+
         String senzorLumina = jTextFieldSenzorLumina.getText().trim();
-        
+
         // Empty the text area
         jTextArea1.setText("");
 
@@ -978,10 +1252,10 @@ public class GUI2 extends javax.swing.JFrame {
                 }
             }
             break;
-            
+
             default:
             jTextArea1.append("Nu exista produse de aceasta categorie!\n");
-}
+        }
 
         // Daca nu avem rezultat bun, afisam mesajul in text area
         if (!foundMatch) {
@@ -1033,142 +1307,6 @@ public class GUI2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void TextFieldPutereMin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPutereMin1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldPutereMin1ActionPerformed
-
-    private void jComboBoxRezistentaApaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRezistentaApaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRezistentaApaActionPerformed
-
-    private void jComboBoxConectivitateWifiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxConectivitateWifiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxConectivitateWifiActionPerformed
-
-    private void jTextFieldSenzorLuminaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSenzorLuminaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldSenzorLuminaActionPerformed
-
-    private void TextFieldPutereMax1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPutereMax1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldPutereMax1ActionPerformed
-
-    private void jTextFieldtipSursaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldtipSursaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldtipSursaActionPerformed
-
-    private void CitireBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CitireBtnActionPerformed
-        // TODO add your handling code here:
-        try (BufferedReader br = new BufferedReader(new FileReader("instante.txt"))) {
-        String line;
-        StringBuilder sb = new StringBuilder();
-
-        // Citim fisierul linie cu linie pana la null
-        while ((line = br.readLine()) != null) {
-            sb.append(line).append("\n"); // adaugam fiecare linie la StringBuilder
-        }
-
-        // JTextArea1 afiseaza StringBuilder
-        jTextArea1.setText(sb.toString());
-    } catch (IOException e) {
-        // mesaj eroare
-        JOptionPane.showMessageDialog(this, "Eroare la citirea din fisier: " + e.getMessage(),
-                "Eroare", JOptionPane.ERROR_MESSAGE);
-    }
-    }//GEN-LAST:event_CitireBtnActionPerformed
-
-    private void AdaugaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaugaBtnActionPerformed
-        // TODO add your handling code here:
-        try (BufferedReader br = new BufferedReader(new FileReader("instante.txt"))) {
-        String line;
-
-        while ((line = br.readLine()) != null) {
-            // delimitatorul ","
-            String[] fields = line.split(",");
-
-            // Primul camp determina clasa
-            switch (fields[0]) {
-                case "Lampa":
-                    lampi.add(new Lampa(
-                            fields[1],                          // Nume lampa
-                            Byte.parseByte(fields[2]),          // Putere
-                            fields[3],                          // Culoare
-                            fields[4],                          // Tip bec
-                            fields[5]                           // Marca
-                    ));
-                    break;
-
-                case "LampaSmartInterior":
-                    lampiSmartExtra.add(new LampaSmartInterior(
-                            fields[1],                          // Nume lampa
-                            Byte.parseByte(fields[2]),          // Putere
-                            fields[3],                          // Culoare
-                            fields[4],                          // Tip bec
-                            fields[5],                          // Marca
-                            Boolean.parseBoolean(fields[6]),    // Control vocal
-                            Boolean.parseBoolean(fields[7]),    // Wifi
-                            fields[8],                          // Tip montaj
-                            Byte.parseByte(fields[9]),          // Durata baterie
-                            fields[10]                          // Producator
-                    ));
-                    break;
-
-                case "Prelungitor":
-                    prelungitoareExtra.add(new Prelungitor(
-                            Integer.parseInt(fields[1]),        // Numar prize
-                            Boolean.parseBoolean(fields[2]),    // Protectie supratensiune
-                            Integer.parseInt(fields[3]),        // Lungime cablu
-                            fields[4],                          // Nume prelungitor
-                            Byte.parseByte(fields[5]),          // Putere
-                            fields[6],                          // Culoare
-                            fields[7],                          // Tip bec
-                            fields[8],                          // Marca
-                            fields[9],                          // Tip stecher
-                            Boolean.parseBoolean(fields[10])    // Indicator pornit
-                    ));
-                    break;
-            }
-        }
-
-        JOptionPane.showMessageDialog(this, 
-            "Datele au fost adaugate cu succes!", 
-            "Succes", JOptionPane.INFORMATION_MESSAGE);
-
-    } catch (IOException e) {
-        JOptionPane.showMessageDialog(this, 
-            "Eroare la citirea din fisier: " + e.getMessage(), 
-            "Eroare", JOptionPane.ERROR_MESSAGE);
-        
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, 
-            "Eroare de format: " + e.getMessage(), 
-            "Eroare", JOptionPane.ERROR_MESSAGE);
-    }
-    }//GEN-LAST:event_AdaugaBtnActionPerformed
-
-    private void SalvareBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvareBtnActionPerformed
-        // TODO add your handling code here:
-        // content din jTextArea1
-    String content = jTextArea1.getText();
-
-    try (BufferedWriter bw = new BufferedWriter(new FileWriter("iesire.txt"))) {
-        // Scriem content in fisierul iesire.txt
-        bw.write(content);
-        bw.newLine();
-
-        // mesaj succes
-        JOptionPane.showMessageDialog(this, 
-            "Coninutul a fost salvat cu succes in iesire.txt!", 
-            "SUCCES", JOptionPane.INFORMATION_MESSAGE);
-    } catch (IOException e) {
-        // mesaj eroare
-        JOptionPane.showMessageDialog(this, 
-            "Eroare la salvarea fisierului: " + e.getMessage(), 
-            "EROARE", JOptionPane.ERROR_MESSAGE);
-    }
-    
-    }//GEN-LAST:event_SalvareBtnActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -1206,10 +1344,13 @@ public class GUI2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AdaugaBtn;
+    private javax.swing.JButton AdaugaBtn1;
     private javax.swing.JButton ButtonFiltrare;
     private javax.swing.JButton ButtonFiltrare1;
     private javax.swing.JButton CitireBtn;
+    private javax.swing.JButton CitireBtn1;
     private javax.swing.JButton SalvareBtn;
+    private javax.swing.JButton SalvareBtn1;
     private javax.swing.JTextField TextFieldCuloare;
     private javax.swing.JTextField TextFieldCuloare1;
     private javax.swing.JTextField TextFieldMarca;
