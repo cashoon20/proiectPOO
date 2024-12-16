@@ -1,7 +1,0 @@
-Lampa,Lampa tip A,10,Alb,LED,NOU
-LampaSmartInterior,Smart 1,18,Rosu,LED,Microsoft,true,false,NOU,8,NOU
-Prelungitor,3,true,10,Prelungitor 1,20,Negru,LED,Marca 1,Tip Stecher NOU,true
-Lampa,Lampa tip B,15,Albastru,Halogen,NOU
-LampaSmartInterior,Smart 2,22,Verde,Halogen,LG,true,true,NOU,10,LG
-Prelungitor,5,false,12,Prelungitor 2,25,Alb,LED,Marca 2,Tip Stecher NOU,false
-
